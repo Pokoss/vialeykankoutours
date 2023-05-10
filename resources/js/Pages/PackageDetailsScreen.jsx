@@ -2,15 +2,15 @@ import React from 'react'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 
-function PackageDetailsScreen() {
-  return (
-    <div>
-        <Navbar/>
-        <div className='container mx-auto flex flex-wrap py-6'>
+function PackageDetailsScreen({ tour_package }) {
+    return (
+        <div>
+            <Navbar />
+            <div className='container mx-auto flex flex-wrap py-6'>
                 <section class="w-full md:w-2/3 flex flex-col items-center px-3">
                     <article class="flex flex-col shadow my-4">
-                        <a href="#" class="text-3xl font-bold hover:text-gray-700 p-2">Visit the east</a>
-                        
+                        <a href="#" class="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
+
                         <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
                             <a
                                 href="/"
@@ -20,7 +20,7 @@ function PackageDetailsScreen() {
                             >
                                 Happening on
                             </a>
-                            <span className="text-gray-600"> — 28 Dec 2023</span>
+                            <span className="text-gray-600"> — {tour_package.start_date}</span>
                         </p>
                         {/* <div href="#" class="text-green-600 text-sm font-bold uppercase p-2">UGX 250,000</div> */}
                         {/* <div>
@@ -33,30 +33,19 @@ function PackageDetailsScreen() {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus nihil est maiores reprehenderit magni. Dolor perspiciatis animi sapiente est adipisci nesciunt, vitae vel. Tenetur nam facere natus totam harum.
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo eligendi amet, deleniti reprehenderit cumque provident delectus tempora velit. Blanditiis magnam, nihil provident obcaecati nobis ullam odio. Necessitatibus nisi odit cupiditate?
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi hic libero voluptatibus ab, minima beatae odio odit id ut pariatur nesciunt dicta natus modi itaque, iusto debitis? Architecto, excepturi corporis.
-                                </p>
+                            </p>
 
                         </div>
                         <div class="bg-white flex flex-col justify-start px-6">
 
                             <h2 class="text-green-600 text-sm font-bold uppercase px-2 mb-4">What is Included</h2>
                             <ul class="max-w-md space-y-1 text-gray-500 list-inside mb-6">
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    There will be free photography and videography
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    Accommodation will be on free
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    Boast cruise
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    Gorilla tracting
-                                </li>
-
+                                {tour_package.activities.map((activity, index) =>
+                                    <li key={index} class="flex items-center">
+                                        <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        {activity}
+                                    </li>
+                                )}
                             </ul>
 
                         </div>
@@ -64,23 +53,12 @@ function PackageDetailsScreen() {
 
                             <h2 class="text-green-600 text-sm font-bold uppercase px-2 mb-4">Add Ons</h2>
                             <ul class="max-w-md space-y-1 text-gray-500 list-inside mb-6">
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    There will be free photography and videography
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    Accommodation will be on free
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    Boast cruise
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                    Gorilla tracting
-                                </li>
-
+                                {tour_package.addons.map((addon, index) =>
+                                    <li key={index} class="flex items-center">
+                                        <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        {addon}
+                                    </li>
+                                )}
                             </ul>
 
                         </div>
@@ -162,9 +140,9 @@ function PackageDetailsScreen() {
                     </div>
                 </aside>
             </div>
-        <Footer/>
-    </div>
-  )
+            <Footer />
+        </div>
+    )
 }
 
 export default PackageDetailsScreen

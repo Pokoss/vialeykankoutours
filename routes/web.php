@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HireController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PickupController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -14,65 +21,17 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('HomeScreen');
-});
+Route::get('/', fn() => Inertia::render('HomeScreen'));
+Route::get('/aboutus', fn() =>Inertia::render('AboutUsScreen'));
+Route::get('/careers', fn() => Inertia::render('CareersScreen'));
+Route::get('/loginadmin', fn() => Inertia::render('AdminLoginScreen'));
+Route::get('/register', fn() => Inertia::render('RegisterScreen'));
+Route::get('/adminhome', fn() => Inertia::render('AdminHomeScreen'));
 
-Route::get('/aboutus', function () {
-    return Inertia::render('AboutUsScreen');
-});
-
-Route::get('/careers', function () {
-    return Inertia::render('CareersScreen');
-});
-
-Route::get('/blog', function () {
-    return Inertia::render('BlogScreen');
-});
-
-Route::get('/blog/readblog', function () {
-    return Inertia::render('ReadBlogScreen');
-});
-
-Route::get('/events', function () {
-    return Inertia::render('EventsScreen');
-});
-Route::get('/events/viewevent', function () {
-    return Inertia::render('ViewEventScreen');
-});
-
-Route::get('/consultation', function () {
-    return Inertia::render('ConsultationScreen');
-});
-
-Route::get('/packages', function () {
-    return Inertia::render('PackagesScreen');
-});
-
-Route::get('/packages/packagedetails', function () {
-    return Inertia::render('PackageDetailsScreen');
-});
-
-Route::get('/loginadmin', function () {
-    return Inertia::render('AdminLoginScreen');
-});
-
-Route::get('/register', function () {
-    return Inertia::render('RegisterScreen');
-});
-
-Route::get('/adminhome', function () {
-    return Inertia::render('AdminHomeScreen');
-});
-
-Route::get('/gallery', function () {
-    return Inertia::render('GalleryScreen');
-});
-
-Route::get('/airportpickup', function () {
-    return Inertia::render('AirportPickUpScreen');
-});
-
-Route::get('/carhire', function () {
-    return Inertia::render('CarHireScreen');
-});
+Route::resource('/events', EventController::class);
+Route::resource('/gallery', GalleryController::class);
+Route::resource('/airportpickup', PickupController::class);
+Route::resource('/carhire', HireController::class);
+Route::resource('/consultation', ConsultationController::class);
+Route::resource('/packages', PackageController::class);
+Route::resource('/blog', PostController::class);

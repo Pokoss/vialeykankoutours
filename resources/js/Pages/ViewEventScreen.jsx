@@ -3,15 +3,15 @@ import React from 'react'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 
-function ViewEventScreen() {
+function ViewEventScreen({ event }) {
     return (
         <div>
             <Navbar />
             <div className='container mx-auto flex flex-wrap py-6'>
                 <section class="w-full md:w-2/3 flex flex-col items-center px-3">
                     <article class="flex flex-col shadow my-4">
-                        <a href="#" class="text-3xl font-bold hover:text-gray-700 p-2">Visit the east</a>
-                        
+                        <a href="#" class="text-3xl font-bold hover:text-gray-700 p-2">{event.title}</a>
+
                         <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
                             <a
                                 href="/"
@@ -21,24 +21,17 @@ function ViewEventScreen() {
                             >
                                 Happening on
                             </a>
-                            <span className="text-gray-600"> — 28 Dec 2023</span>
+                            <span className="text-gray-600"> — {event.date}</span>
                         </p>
                         {/* <div href="#" class="text-green-600 text-sm font-bold uppercase p-2">UGX 250,000</div> */}
                         <div>
                             <img src='https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
                         </div>
                         <div class="bg-white flex flex-col justify-start p-6">
-
                             <h2 class="text-green-600 text-sm font-bold uppercase p-2">Details</h2>
                             <p class="pb-6 mt-5">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus nihil est maiores reprehenderit magni. Dolor perspiciatis animi sapiente est adipisci nesciunt, vitae vel. Tenetur nam facere natus totam harum.
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo eligendi amet, deleniti reprehenderit cumque provident delectus tempora velit. Blanditiis magnam, nihil provident obcaecati nobis ullam odio. Necessitatibus nisi odit cupiditate?
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi hic libero voluptatibus ab, minima beatae odio odit id ut pariatur nesciunt dicta natus modi itaque, iusto debitis? Architecto, excepturi corporis.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod tenetur unde consequatur distinctio exercitationem dicta saepe, obcaecati repudiandae corrupti aliquid iusto fuga eligendi beatae, esse, id voluptatum ut ducimus.
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptate ducimus repellendus, asperiores impedit commodi voluptatem voluptatibus. Doloribus incidunt harum quasi sapiente ullam vero reprehenderit quam ab itaque. Minima, esse.
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At eaque non commodi dignissimos velit et iusto veniam suscipit, hic voluptates ea excepturi soluta ducimus distinctio vitae, eos numquam tempore? Possimus?
+                                {event.details}
                             </p>
-
                         </div>
                         <div class="bg-white flex flex-col justify-start px-6">
 

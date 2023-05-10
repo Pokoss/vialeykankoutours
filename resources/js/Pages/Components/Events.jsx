@@ -16,36 +16,33 @@ function Events({event}) {
             />
             <div className="p-5 border border-t-0">
               <p className="mb-3 text-xs font-semibold tracking-wide uppercase">
-                <a
-                  href="/"
+                <span
                   className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
                   aria-label="Category"
                   title="traveling"
                 >
                   traveling
-                </a>
+                </span>
                 <span className="text-gray-600">— {event.date}</span>
               </p>
-              <a
-                href="/"
+              <span
                 aria-label="Category"
                 title="Visit the East"
                 className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
               >
                 {event.title}
-              </a>
+              </span>
               <p className="mb-2 text-gray-700 line-clamp-3">
                 {
                   event.description
                 }
               </p>
-              <Link
-                href=""
+              <span
                 aria-label=""
                 className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-primary"
               >
                 Learn more
-              </Link>
+              </span>
             </div>
           </div>
   )

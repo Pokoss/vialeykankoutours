@@ -5,32 +5,33 @@ import Events from './Components/Events'
 import { Link } from '@inertiajs/react';
 
 
-function EventsScreen() {
+function EventsScreen({events}) {
 
-  const events = [
-    {
-      'id': '1',
-      'title': 'Queen Elizabeth',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-    },
-    {
-      'id': '2',
-      'title': 'Karuma Falls',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-    },
-    {
-      'id': '3',
-      'title': 'Kampala night',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-    },
+  // const events = [
+  //   {
+  //     'id': '1',
+  //     'title': 'Queen Elizabeth',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //   },
+  //   {
+  //     'id': '2',
+  //     'title': 'Karuma Falls',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //   },
+  //   {
+  //     'id': '3',
+  //     'title': 'Kampala night',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //   },
 
-  ]
+  // ]
+
   return (
     <div>
       <Navbar />
@@ -40,7 +41,7 @@ function EventsScreen() {
           <div className="grid gap-8 lg:grid-cols-2 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
 
           {events && events.map((event) => (
-              <Link href='/events/viewevent'>
+              <Link href={`/events/${event.slug}`}>
                 <Events event={event} />
               </Link>
             ))}
