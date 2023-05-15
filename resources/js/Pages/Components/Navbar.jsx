@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import logo from '../Images/logo.png'
 import { Link } from '@inertiajs/react';
 import {
     Menu,
@@ -17,7 +16,7 @@ function Navbar() {
                 <div>
                     <div className="flex items-center justify-between py-2 md:py-3 md:block">
                         <Link className='flex h-full' href="/">
-                            <img src={logo} className='w-16 h-12 mr-4' />
+                            <img src='/images/logo.png' className='w-16 h-12 mr-4' />
                             <div className='h-full align-middle justify-center content-center text-center pt-2' >
                                 <h2 className="text-lg font-bold text-white">Vialey Kankou Tours</h2>
                             </div>

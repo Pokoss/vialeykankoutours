@@ -4,6 +4,7 @@ use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HireController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\PostController;
@@ -28,6 +29,7 @@ Route::get('/loginadmin', fn() => Inertia::render('AdminLoginScreen'));
 Route::get('/register', fn() => Inertia::render('RegisterScreen'));
 Route::get('/adminhome', fn() => Inertia::render('AdminHomeScreen'));
 
+Route::resource('/', HomeController::class);
 Route::resource('/events', EventController::class);
 Route::resource('/gallery', GalleryController::class);
 Route::resource('/airportpickup', PickupController::class);

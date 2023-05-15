@@ -11,68 +11,68 @@ import { Link } from '@inertiajs/react';
 import { Input } from '@material-tailwind/react';
 import TestimonialCard from './Components/TestimonialCard';
 
-function HomeScreen() {
+function HomeScreen({ events, packages }) {
 
-  const packages = [
-    {
-      'id': '1',
-      'title': 'Western Special',
-      'duration': '3 days',
-      'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
-      'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
-      "addons": ['Free photography', 'Free meals', 'Free tour guide']
-    },
-    {
-      'id': '2',
-      'title': 'Eastern Special',
-      'duration': '3 days',
-      'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
-      'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
-      "addons": ['Free photography', 'Free meals', 'Free tour guide']
-    },
-    {
-      'id': '3',
-      'title': 'Northern Special',
-      'duration': '3 days',
-      'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
-      "addons": ['Free photography', 'Free meals', 'Free tour guide']
-    },
-    
-    {
-      'id': '3',
-      'title': 'Southern Special',
-      'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
-      'duration': '3 days',
-      'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
-      "addons": ['Free photography', 'Free meals', 'Free tour guide']
-    },
-  ]
+  // const packages = [
+  //   {
+  //     'id': '1',
+  //     'title': 'Western Special',
+  //     'duration': '3 days',
+  //     'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+  //     'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
+  //     "addons": ['Free photography', 'Free meals', 'Free tour guide']
+  //   },
+  //   {
+  //     'id': '2',
+  //     'title': 'Eastern Special',
+  //     'duration': '3 days',
+  //     'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+  //     'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
+  //     "addons": ['Free photography', 'Free meals', 'Free tour guide']
+  //   },
+  //   {
+  //     'id': '3',
+  //     'title': 'Northern Special',
+  //     'duration': '3 days',
+  //     'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
+  //     "addons": ['Free photography', 'Free meals', 'Free tour guide']
+  //   },
 
-  const events = [
-    {
-      'id': '1',
-      'title': 'Queen Elizabeth',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-      'activities' :['Mountain climbing' , 'Gorillas', 'Boat curise']
-    },
-    {
-      'id': '2',
-      'title': 'Karuma Falls',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-    },
-    {
-      'id': '3',
-      'title': 'Kampala night',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-    },
+  //   {
+  //     'id': '3',
+  //     'title': 'Southern Special',
+  //     'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+  //     'duration': '3 days',
+  //     'activities': ['3 Hotels', 'Game drive', 'Gorilla tracking'],
+  //     "addons": ['Free photography', 'Free meals', 'Free tour guide']
+  //   },
+  // ]
 
-  ]
+  // const events = [
+  //   {
+  //     'id': '1',
+  //     'title': 'Queen Elizabeth',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //     'activities' :['Mountain climbing' , 'Gorillas', 'Boat curise']
+  //   },
+  //   {
+  //     'id': '2',
+  //     'title': 'Karuma Falls',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //   },
+  //   {
+  //     'id': '3',
+  //     'title': 'Kampala night',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'description': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //   },
+
+  // ]
   const testimonials = [
     {
       'id': '1',
@@ -81,7 +81,7 @@ function HomeScreen() {
       'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
       'date': '28 Dec 2023',
       'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-      
+
     },
     {
       'id': '2',
@@ -90,7 +90,7 @@ function HomeScreen() {
       'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
       'date': '28 Dec 2023',
       'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-      
+
     },
     {
       'id': '3',
@@ -99,7 +99,7 @@ function HomeScreen() {
       'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
       'date': '28 Dec 2023',
       'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
-      
+
     },
   ]
 
@@ -278,8 +278,8 @@ function HomeScreen() {
         <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12" data-aos='slide-up'>
           <div className="grid gap-8 lg:grid-cols-4 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
             {
-              packages && packages.map((pack) => (
-                <Link href='/packages/packagedetails'>
+              packages && packages.map((pack, index) => (
+                <Link key={index} href={`/packages/${pack.slug}`}>
                   <Packages pack={pack} />
                 </Link>
               ))
@@ -684,16 +684,16 @@ function HomeScreen() {
       </div>
 
       <Splide options={{ autoplay: true, rewind: true }}>
-          {
-            testimonials && testimonials.map((testimonial)=>(
-              <SplideSlide>
+        {
+          testimonials && testimonials.map((testimonial) => (
+            <SplideSlide>
 
-              <TestimonialCard testimonial={testimonial}/>
-        </SplideSlide>
-            ))
-          }
+              <TestimonialCard testimonial={testimonial} />
+            </SplideSlide>
+          ))
+        }
 
-      
+
       </Splide>
       {/*End testimonial section*/}
 

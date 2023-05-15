@@ -8,7 +8,7 @@ function PackageDetailsScreen({ tour_package }) {
             <Navbar />
             <div className='container mx-auto flex flex-wrap py-6'>
                 <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-                    <article class="flex flex-col shadow my-4">
+                    <article class="w-full flex flex-col shadow my-4">
                         <a href="#" class="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
 
                         <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
@@ -30,9 +30,7 @@ function PackageDetailsScreen({ tour_package }) {
 
                             <h2 class="text-green-600 text-sm font-bold uppercase p-2">Details</h2>
                             <p class="pb-6 mt-5">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus nihil est maiores reprehenderit magni. Dolor perspiciatis animi sapiente est adipisci nesciunt, vitae vel. Tenetur nam facere natus totam harum.
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo eligendi amet, deleniti reprehenderit cumque provident delectus tempora velit. Blanditiis magnam, nihil provident obcaecati nobis ullam odio. Necessitatibus nisi odit cupiditate?
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi hic libero voluptatibus ab, minima beatae odio odit id ut pariatur nesciunt dicta natus modi itaque, iusto debitis? Architecto, excepturi corporis.
+                                {tour_package.description}
                             </p>
 
                         </div>
@@ -98,17 +96,7 @@ function PackageDetailsScreen({ tour_package }) {
 
                                 <p className="ml-1">Share</p>
                             </div>
-
-
-
                         </div>
-
-
-
-
-
-
-
                     </article>
                 </section>
 
