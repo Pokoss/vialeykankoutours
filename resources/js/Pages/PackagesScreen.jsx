@@ -41,23 +41,20 @@ function PackagesScreen({ packages }) {
     <div>
       <Navbar />
       <div className='container mx-auto flex flex-wrap py-6'>
-        <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-          <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
-
-            {
-              packages && packages.map((pack, index) => (
-                <Link key={index} href={`/packages/${pack.slug}`}>
-                  <Packages pack={pack} />
-                </Link>
-              ))
-            }
-
+        <section className="w-full flex flex-col items-center px-3">
+          <div className="grid gap-8 lg:grid-cols-4 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
+            {packages && packages.map((pack, index) => (
+              <Link key={index} href={`/packages/${pack.slug}`}>
+                <Packages pack={pack} />
+              </Link>
+            ))}
           </div>
         </section>
         <aside className="w-full md:w-1/3 flex flex-col items-center px-3">
 
         </aside>
       </div>
+      
       <Footer />
     </div>
   )

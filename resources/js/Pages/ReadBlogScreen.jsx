@@ -3,29 +3,25 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 
 function ReadBlogScreen({ post }) {
+    console.log(post)
     return (
         <div>
             <Navbar />
             <div className='container mx-auto flex flex-wrap py-6'>
-                <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-                    <article class="flex flex-col shadow my-4">
+                <section className="w-full md:w-2/3 flex flex-col items-center px-3">
+                    <article className="flex flex-col shadow my-4">
 
-                        <a href="#" class="hover:opacity-75">
+                        <a href="#" className="hover:opacity-75">
                             <img src='https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
                         </a>
-                        <div class="bg-white flex flex-col justify-start p-6">
-                            <a href="#" class="text-yellow-600 text-sm font-bold uppercase pb-4">Nature</a>
-                            <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
-                            <p href="#" class="text-sm pb-3">
-                                By <a href="#" class="font-semibold hover:text-gray-800">David Grzyb</a>, Published on April 25th, 2020
+                        <div className="bg-white flex flex-col justify-start p-6">
+                            <a href="#" className="text-yellow-600 text-sm font-bold uppercase pb-4">Nature</a>
+                            <a href="#" className="text-3xl font-bold hover:text-gray-700 pb-4">{post.title}</a>
+                            <p href="#" className="text-sm pb-3">
+                                By <a href="#" className="font-semibold hover:text-gray-800">David Grzyb</a>, Published on {post.created_at}
                             </p>
-                            <p class="pb-6 mt-5">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus nihil est maiores reprehenderit magni. Dolor perspiciatis animi sapiente est adipisci nesciunt, vitae vel. Tenetur nam facere natus totam harum.
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo eligendi amet, deleniti reprehenderit cumque provident delectus tempora velit. Blanditiis magnam, nihil provident obcaecati nobis ullam odio. Necessitatibus nisi odit cupiditate?
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi hic libero voluptatibus ab, minima beatae odio odit id ut pariatur nesciunt dicta natus modi itaque, iusto debitis? Architecto, excepturi corporis.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod tenetur unde consequatur distinctio exercitationem dicta saepe, obcaecati repudiandae corrupti aliquid iusto fuga eligendi beatae, esse, id voluptatum ut ducimus.
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptate ducimus repellendus, asperiores impedit commodi voluptatem voluptatibus. Doloribus incidunt harum quasi sapiente ullam vero reprehenderit quam ab itaque. Minima, esse.
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At eaque non commodi dignissimos velit et iusto veniam suscipit, hic voluptates ea excepturi soluta ducimus distinctio vitae, eos numquam tempore? Possimus?
+                            <p className="pb-6 mt-5">
+                                {post.content}
                             </p>
 
                         </div>
@@ -35,7 +31,7 @@ function ReadBlogScreen({ post }) {
                         <div className="border-b border-gray-200 pb-6 flex justify-between mt-2 ml-5 mr-4">
                             <button>
                                 <div className="flex ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /> <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" /> </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-whatsapp" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /> <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" /> </svg>
                                     <p className="ml-1">Wh</p>
                                 </div>
                             </button>
@@ -78,30 +74,30 @@ function ReadBlogScreen({ post }) {
                     </article>
                 </section>
 
-                <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
-                    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                        <p class="text-xl font-semibold pb-5">About Us</p>
-                        <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
-                        <a href="#" class="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4">
+                <aside className="w-full md:w-1/3 flex flex-col items-center px-3">
+                    <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+                        <p className="text-xl font-semibold pb-5">About Us</p>
+                        <p className="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                        <a href="#" className="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4">
                             Get to know us
                         </a>
                     </div>
 
-                    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                        <p class="text-xl font-semibold pb-5">Instagram</p>
-                        <div class="grid grid-cols-3 gap-3">
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
+                    <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+                        <p className="text-xl font-semibold pb-5">Instagram</p>
+                        <div className="grid grid-cols-3 gap-3">
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
                         </div>
-                        <a href="#" class="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-6">
-                            <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
+                        <a href="#" className="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-6">
+                            <i className="fab fa-instagram mr-2"></i> Follow @dgrzyb
                         </a>
                     </div>
                 </aside>

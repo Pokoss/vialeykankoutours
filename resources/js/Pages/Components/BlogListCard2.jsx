@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-function BlogListCard2({title,content,time,}) {
-  return (
+function BlogListCard2({post}) {
+      return (
     <div>
       <div className="w-full rounded-lg shadow-md lg:max-w-sm" >
         <img
@@ -12,13 +12,13 @@ function BlogListCard2({title,content,time,}) {
         />
         <div className="p-4">
           <h4 className="text-lg font-bold mb-1 line-clamp-2">
-              Something serious happened today get to find out what
+            {post.title}
             </h4>
           <p className="mb-2 leading-normal text-gray-500 line-clamp-2">
-            Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat vulputate. Ut vulputate est non quam dignissim elementum.
+            {post.description}
           </p>
           <p className="text-gray-500 mb-1">
-            <small>Published <u>13.01.2022</u></small>
+            <small>Published <u>{post.created_at}</u></small>
           </p>
 
         </div>

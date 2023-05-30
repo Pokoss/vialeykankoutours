@@ -7,11 +7,27 @@ import Packages from './Components/Packages';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Events from './Components/Events';
-import { Link } from '@inertiajs/react';
+import { Link, useForm } from '@inertiajs/react';
 import { Input } from '@material-tailwind/react';
 import TestimonialCard from './Components/TestimonialCard';
 
-function HomeScreen({ events, packages }) {
+function HomeScreen({ events, packages, testimonials }) {
+  const contactForm = useForm({
+    'name': null,
+    'email': null,
+    'phone': null,
+    'details': 'Booked from home'
+  });
+
+  const handleSubmitContact = e => {
+    e.preventDefault();
+    contactForm.post('/consultation', {
+      preserveScroll: true, preserveState: true,
+      onSuccess: () => {
+        contactForm.reset()
+      }
+    })
+  }
 
   // const packages = [
   //   {
@@ -73,44 +89,44 @@ function HomeScreen({ events, packages }) {
   //   },
 
   // ]
-  const testimonials = [
-    {
-      'id': '1',
-      'name': 'Opoka Daniel',
-      'title': 'Senior Tourist',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  // const testimonials = [
+  //   {
+  //     'id': '1',
+  //     'name': 'Opoka Daniel',
+  //     'title': 'Senior Tourist',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
 
-    },
-    {
-      'id': '2',
-      'name': 'Jude',
-      'title': 'Senior Tourist',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //   },
+  //   {
+  //     'id': '2',
+  //     'name': 'Jude',
+  //     'title': 'Senior Tourist',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
 
-    },
-    {
-      'id': '3',
-      'name': 'Faith',
-      'title': 'Senior Tourist',
-      'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
-      'date': '28 Dec 2023',
-      'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
+  //   },
+  //   {
+  //     'id': '3',
+  //     'name': 'Faith',
+  //     'title': 'Senior Tourist',
+  //     'image': 'https://images.pexels.com/photos/2408666/pexels-photo-2408666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500',
+  //     'date': '28 Dec 2023',
+  //     'testimony': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, odio beatae. Repellat tempore aspernatur delectus, quam cumque quis necessitatibus animi eius, eveniet laudantium officiis ea iusto, sed nam optio? Vero?',
 
-    },
-  ]
+  //   },
+  // ]
 
   const mystyle = {
     backgroundAttachment: 'fixed',
     backgroundImage: 'url("https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg")'
   };
   const myPickupStyle = {
-
     backgroundImage: 'url("/Images/events.jpg")'
   };
+
   useEffect(() => {
     AOS.init({ duration: 600 })
   }, [])
@@ -156,8 +172,8 @@ function HomeScreen({ events, packages }) {
                   accusantium doloremque laudan, totam rem aperiam, eaque ipsa
                   quae.
                 </p>
-                <a
-                  href="/"
+                <Link
+                  href="/aboutus"
                   aria-label=""
                   className="inline-flex bg-primary p-2 rounded-md items-center font-semibold tracking-wider transition-colors duration-200 text-white hover:text-teal-accent-700"
                   data-aos='fade-right'
@@ -170,7 +186,7 @@ function HomeScreen({ events, packages }) {
                   >
                     <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
                   </svg>
-                </a>
+                </Link>
               </div>
 
 
@@ -179,15 +195,15 @@ function HomeScreen({ events, packages }) {
                   <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                     Book your perfect getaway trip
                   </h3>
-                  <form>
+                  <form onSubmit={handleSubmitContact}>
                     <div className='my-2'>
-                      <Input color="green" label='Name' />
+                      <Input color="green" label='Name' value={contactForm.data.name ?? ''} onChange={e => contactForm.setData('name', e.target.value)} />
                     </div>
                     <div className='my-2'>
-                      <Input color="green" label='Email' />
+                      <Input color="green" label='Email' value={contactForm.data.email ?? ''} onChange={e => contactForm.setData('email', e.target.value)} />
                     </div>
                     <div className='my-2'>
-                      <Input color="green" label='Phone' />
+                      <Input color="green" label='Phone' value={contactForm.data.phone ?? ''} onChange={e => contactForm.setData('phone', e.target.value)} />
                     </div>
                     <div className="mt-4 mb-2 sm:mb-4">
                       <button
@@ -222,9 +238,9 @@ function HomeScreen({ events, packages }) {
       <div className="grid grid-cols-1 md:grid-cols-2">
 
         <div className="bg-white p-12 md:p-24 flex justify-end items-center">
-          <a href="" data-aos='fade-right'>
+          <Link href="" data-aos='fade-right'>
             <img src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" className="w-full max-w-md" />
-          </a>
+          </Link>
         </div>
 
         <div className="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
@@ -232,7 +248,7 @@ function HomeScreen({ events, packages }) {
             <div className="w-24 h-2 bg-primary mb-4"></div>
             <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">About Us</h2>
             <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laudantium commodi, deleniti ab exercitationem odit optio nulla voluptatum sed delectus illum totam fugit atque aspernatur repudiandae culpa necessitatibus harum tenetur!</p>
-            <a href="" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Now</a>
+            <Link href="/aboutus" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Learn More</Link>
           </div>
         </div>
 
@@ -245,9 +261,9 @@ function HomeScreen({ events, packages }) {
 
 
         <div className="bg-white p-12 md:p-24 flex justify-start items-center">
-          <a href="" data-aos='fade-left'>
+          <Link href="" data-aos='fade-left'>
             <img src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" className="w-full max-w-md" />
-          </a>
+          </Link>
         </div>
 
         <div className="md:order-first bg-gray-100 p-12 md:p-24 flex justify-end items-center">
@@ -255,7 +271,7 @@ function HomeScreen({ events, packages }) {
             <div className="w-24 h-2 bg-primary mb-4"></div>
             <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Custom Package</h2>
             <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">At Vialey Kankou Tours, we prioritze your holiday so tell us what you want to do we plan it and you enjoy it. Click and tell us the details and we will contact you</p>
-            <a href="" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Custom Package</a>
+            <Link href="/packages" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Custom Package</Link>
           </div>
         </div>
 
@@ -297,31 +313,31 @@ function HomeScreen({ events, packages }) {
 
       {/*Airport Pickup  Section*/}
 
-      <section class="bg-white border-b py-8">
+      <section className="bg-white border-b py-8">
         <div className="max-w-xl mx-auto text-center" data-aos='fade-down'>
           <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Pickups and Hires</h2>
         </div>
-        <div class="container max-w-5xl mx-auto m-8">
+        <div className="container max-w-5xl mx-auto m-8">
 
-          <div class="w-full mb-4">
-            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+          <div className="w-full mb-4">
+            <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
           </div>
-          <div class="flex flex-wrap">
-            <div class="w-5/6 sm:w-1/2 p-6">
-              <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+          <div className="flex flex-wrap">
+            <div className="w-5/6 sm:w-1/2 p-6">
+              <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                 Airport Pickups
               </h3>
-              <p class="text-gray-600 mb-8 text-center">
+              <p className="text-gray-600 mb-8 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula. Lorem ipsum dolor sit amet consectetur adipisicing elit. A, velit necessitatibus officiis eaque id modi nemo veritatis quasi dolores nostrum blanditiis accusamus, quidem corrupti dolorum temporibus consequatur doloremque voluptatum assumenda.
                 <br />
                 <br />
 
-                <a href="" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Contact for Pickup</a>
+                <Link href="/airportpickup" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Contact for Pickup</Link>
               </p>
             </div>
-            <div class="w-full sm:w-1/2 p-6">
-              <svg class="w-full sm:h-64 mx-auto" viewBox="0 0 1177 598.5" xmlns="http://www.w3.org/2000/svg">
+            <div className="w-full sm:w-1/2 p-6">
+              <svg className="w-full sm:h-64 mx-auto" viewBox="0 0 1177 598.5" xmlns="http://www.w3.org/2000/svg">
                 <title>travel booking</title>
                 <path
                   transform="translate(-11.5 -150.75)"
@@ -334,8 +350,8 @@ function HomeScreen({ events, packages }) {
                   d="M119.9,721.42c-3-5.51.4-12.27,4.29-17.18s8.61-10,8.51-16.29c-.15-9-9.7-14.31-17.33-19.09a84,84,0,0,1-15.56-12.51A22.8,22.8,0,0,1,95,650c-1.58-3.52-1.54-7.52-1.44-11.37q.51-19.26,1.91-38.49"
                   fill="none"
                   stroke="#3f3d56"
-                  stroke-miterlimit="10"
-                  stroke-width="4"
+                  strokeMiterlimit="10"
+                  strokeWidth="4"
                 />
                 <path transform="translate(-11.5 -150.75)" d="M81,599.39a14,14,0,0,1,7-11.5l3.14,6.22-.1-7.53a14.22,14.22,0,0,1,4.63-.56A14,14,0,1,1,81,599.39Z" fill="#57b894" />
                 <path transform="translate(-11.5 -150.75)" d="M106,694.38a14,14,0,1,0-.68-11.3l8.77,7.13L104.46,688A14,14,0,0,0,106,694.38Z" fill="#57b894" />
@@ -361,19 +377,19 @@ function HomeScreen({ events, packages }) {
                 <circle cx="193" cy="127.75" r="6" fill="#ff6347" />
                 <circle cx="208" cy="127.75" r="6" fill="#ff6347" />
                 <circle cx="223" cy="127.75" r="6" fill="#ff6347" />
-                <path transform="translate(-11.5 -150.75)" d="M387.5,490A66.5,66.5,0,1,1,321,423.5,66.47,66.47,0,0,1,387.5,490Z" fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
-                <path transform="translate(-11.5 -150.75)" d="M325.38,467.23l8.3,13,35.53,55.59a66.5,66.5,0,0,1-103.32-8.57l43.54-84.94.91,1.43" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                <path transform="translate(-11.5 -150.75)" d="M387.5,490A66.5,66.5,0,1,1,321,423.5,66.47,66.47,0,0,1,387.5,490Z" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />
+                <path transform="translate(-11.5 -150.75)" d="M325.38,467.23l8.3,13,35.53,55.59a66.5,66.5,0,0,1-103.32-8.57l43.54-84.94.91,1.43" fill="none" stroke="#f2f2f2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 <path
                   transform="translate(-11.5 -150.75)"
                   d="M385.31,507a66.46,66.46,0,0,1-16.1,28.82l-35.53-55.59,15.69-24.78a.66.66,0,0,1,1.1,0C353.76,460.32,371,486,385.31,507Z"
                   fill="none"
                   stroke="#f2f2f2"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
                 />
-                <path transform="translate(-11.5 -150.75)" d="M337.5,452.5a15,15,0,0,1-12.12,14.73l-15-23.51a15,15,0,0,1,27.16,8.78Z" fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
-                <path transform="translate(-11.5 -150.75)" d="m347.5 481.5" fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
-                <path transform="translate(-11.5 -150.75)" d="m333.5 480.5" fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
+                <path transform="translate(-11.5 -150.75)" d="M337.5,452.5a15,15,0,0,1-12.12,14.73l-15-23.51a15,15,0,0,1,27.16,8.78Z" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />
+                <path transform="translate(-11.5 -150.75)" d="m347.5 481.5" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />
+                <path transform="translate(-11.5 -150.75)" d="m333.5 480.5" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />
                 <path
                   transform="translate(-11.5 -150.75)"
                   d="M563.51,413.13c-.35,0-1.51,0-1.83,0l-6.61.17a.19.19,0,0,1-.17-.09L545,398.42a1.61,1.61,0,0,0-1.37-.75h-2.41c-.57,0-.77.57-.56,1.1l5.09,14.52a.2.2,0,0,1-.18.28l-12.45.18a.81.81,0,0,1-.67-.31l-3.77-4.58a1.59,1.59,0,0,0-1.28-.62h-1.71a.4.4,0,0,0-.38.54l2,7a1.68,1.68,0,0,1,0,1.21l-2,7a.39.39,0,0,0,.38.53h1.7a1.62,1.62,0,0,0,1.28-.62l3.84-4.64a.82.82,0,0,1,.67-.32l12.38.27a.21.21,0,0,1,.18.28L540.65,434c-.21.53,0,1.1.56,1.1h2.41a1.61,1.61,0,0,0,1.37-.76l9.91-14.81a.2.2,0,0,1,.17-.09l6.61.17c.33,0,1.48,0,1.83,0,4.5,0,7.35-1.45,7.35-3.25S568,413.13,563.51,413.13Z"
@@ -448,9 +464,9 @@ function HomeScreen({ events, packages }) {
               </svg>
             </div>
           </div>
-          <div class="flex flex-wrap flex-col-reverse sm:flex-row">
-            <div class="w-full sm:w-1/2 p-6 mt-6">
-              <svg class="w-5/6 sm:h-64 mx-auto" viewBox="0 0 1176.60617 873.97852" xmlns="http://www.w3.org/2000/svg">
+          <div className="flex flex-wrap flex-col-reverse sm:flex-row">
+            <div className="w-full sm:w-1/2 p-6 mt-6">
+              <svg className="w-5/6 sm:h-64 mx-auto" viewBox="0 0 1176.60617 873.97852" xmlns="http://www.w3.org/2000/svg">
                 <title>connected world</title>
                 <path
                   transform="translate(-11.697 -13.011)"
@@ -579,8 +595,8 @@ function HomeScreen({ events, packages }) {
                   fill="none"
                   opacity=".8"
                   stroke="#ff6347"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
                 />
                 <path
                   transform="translate(-11.697 -13.011)"
@@ -588,8 +604,8 @@ function HomeScreen({ events, packages }) {
                   fill="none"
                   opacity=".8"
                   stroke="#ff6347"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
                 />
                 <circle cx="214.07" cy="310.65" r="11.968" fill="#ff6347" />
                 <circle cx="322.2" cy="566.52" r="11.968" fill="#ff6347" />
@@ -598,16 +614,16 @@ function HomeScreen({ events, packages }) {
                 <circle cx="600.35" cy="480.68" r="11.968" fill="#ff6347" />
               </svg>
             </div>
-            <div class="w-full sm:w-1/2 p-6 mt-6">
-              <div class="align-middle">
-                <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+            <div className="w-full sm:w-1/2 p-6 mt-6">
+              <div className="align-middle">
+                <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                   Car Hire
                 </h3>
-                <p class="text-gray-600 mb-8">
+                <p className="text-gray-600 mb-8">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione molestiae excepturi repudiandae animi. Nam hic neque voluptatibus praesentium ipsa vitae, perspiciatis voluptatem similique officiis eos nulla sit repellat distinctio qui.
                   <br />
                   <br />
-                  <a href="" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Contact to hire</a>
+                  <Link href="/carhire" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Contact to hire</Link>
                 </p>
               </div>
             </div>
@@ -630,8 +646,8 @@ function HomeScreen({ events, packages }) {
 
         <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12" data-aos='slide-up'>
           <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
-            {events && events.map((event) => (
-              <Link href='/events/viewevent'>
+            {events && events.map((event, index) => (
+              <Link key={index} href='/events/viewevent'>
                 <Events event={event} />
               </Link>
             ))}
@@ -656,11 +672,11 @@ function HomeScreen({ events, packages }) {
 
       </div>
       <div className='w-full'>
-        <div class="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
-          <div class="w-full lg:w-1/2">
-            <div class="lg:max-w-lg">
-              <h1 class="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">Find your premium new glasses exported from US</h1>
-              <p class="my-4 text-gray-600 dark:text-gray-300">We work with the best remunated glasses dealers in US to find your new glasses. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae velit officiis qui fugit obcaecati voluptate totam! Sit architecto eius voluptatum, tempore vel, obcaecati magni illum officiis saepe eos, rerum voluptas!
+        <div className="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
+          <div className="w-full lg:w-1/2">
+            <div className="lg:max-w-lg">
+              <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">Find your premium new glasses exported from US</h1>
+              <p className="my-4 text-gray-600 dark:text-gray-300">We work with the best remunated glasses dealers in US to find your new glasses. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae velit officiis qui fugit obcaecati voluptate totam! Sit architecto eius voluptatum, tempore vel, obcaecati magni illum officiis saepe eos, rerum voluptas!
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptatum vero aspernatur illo voluptates illum explicabo tempora molestias dolorum quis dolore doloribus expedita corrupti quae itaque facilis, asperiores modi. Possimus.
 
               </p>
@@ -669,8 +685,8 @@ function HomeScreen({ events, packages }) {
             </div>
           </div>
 
-          <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
-            <img class="object-cover w-full h-full max-w-2xl rounded-md" src="https://img.freepik.com/free-photo/close-up-man-holding-tickets_23-2149080807.jpg?w=740&t=st=1682678572~exp=1682679172~hmac=a1a51b2ccd153e0c72988153a1f30efec85bfa0ffe994cab8b701e85a487948a" alt="glasses photo" />
+          <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
+            <img className="object-cover w-full h-full max-w-2xl rounded-md" src="https://img.freepik.com/free-photo/close-up-man-holding-tickets_23-2149080807.jpg?w=740&t=st=1682678572~exp=1682679172~hmac=a1a51b2ccd153e0c72988153a1f30efec85bfa0ffe994cab8b701e85a487948a" alt="glasses photo" />
           </div>
         </div>
       </div>
@@ -683,11 +699,17 @@ function HomeScreen({ events, packages }) {
         <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Testimonials</h2>
       </div>
 
-      <Splide options={{ autoplay: true, rewind: true }}>
+      <Splide options={{
+          type: 'loop',
+          perPage: 3,
+          perMove: 1,
+          gap: '1rem',
+          autoplay: true,
+          interval: 3000,
+        }} className='mx-12'>
         {
-          testimonials && testimonials.map((testimonial) => (
-            <SplideSlide>
-
+          testimonials && testimonials.map((testimonial, index) => (
+            <SplideSlide key={index} >
               <TestimonialCard testimonial={testimonial} />
             </SplideSlide>
           ))

@@ -13,8 +13,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::get();
-        return Inertia::render('BlogScreen', ['posts' => $posts]);
+        $latest = Post::latest()->first();
+        if ($latest)
+            $posts = Post::where('id', '!=', $latest->id)->get();
+        else
+            $posts = Post::get();
+
+        return Inertia::render('BlogScreen', ['posts' => $posts, 'latest' => $latest]);
     }
 
     /**

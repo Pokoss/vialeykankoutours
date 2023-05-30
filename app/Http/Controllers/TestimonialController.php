@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gallery;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class GalleryController extends Controller
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $gallery = Gallery::latest()->limit(20)->get();
-        return Inertia::render('GalleryScreen', ['gallery' => $gallery]);
+        //
     }
 
     /**
@@ -36,7 +34,7 @@ class GalleryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Gallery $gallery)
+    public function show(Testimonial $testimonial)
     {
         //
     }
@@ -44,7 +42,7 @@ class GalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Gallery $gallery)
+    public function edit(Testimonial $testimonial)
     {
         //
     }
@@ -52,7 +50,7 @@ class GalleryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, Testimonial $testimonial)
     {
         //
     }
@@ -60,7 +58,7 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Gallery $gallery)
+    public function destroy(Testimonial $testimonial)
     {
         //
     }

@@ -7,9 +7,9 @@ function PackageDetailsScreen({ tour_package }) {
         <div>
             <Navbar />
             <div className='container mx-auto flex flex-wrap py-6'>
-                <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-                    <article class="w-full flex flex-col shadow my-4">
-                        <a href="#" class="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
+                <section className="w-full md:w-2/3 flex flex-col items-center px-3">
+                    <article className="w-full flex flex-col shadow my-4">
+                        <a href="#" className="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
 
                         <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
                             <a
@@ -22,38 +22,38 @@ function PackageDetailsScreen({ tour_package }) {
                             </a>
                             <span className="text-gray-600"> — {tour_package.start_date}</span>
                         </p>
-                        {/* <div href="#" class="text-green-600 text-sm font-bold uppercase p-2">UGX 250,000</div> */}
+                        {/* <div href="#" className="text-green-600 text-sm font-bold uppercase p-2">UGX 250,000</div> */}
                         {/* <div>
                             <img src='https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
                         </div> */}
-                        <div class="bg-white flex flex-col justify-start p-6">
+                        <div className="bg-white flex flex-col justify-start p-6">
 
-                            <h2 class="text-green-600 text-sm font-bold uppercase p-2">Details</h2>
-                            <p class="pb-6 mt-5">
+                            <h2 className="text-green-600 text-sm font-bold uppercase p-2">Details</h2>
+                            <p className="pb-6 mt-5">
                                 {tour_package.description}
                             </p>
 
                         </div>
-                        <div class="bg-white flex flex-col justify-start px-6">
+                        <div className="bg-white flex flex-col justify-start px-6">
 
-                            <h2 class="text-green-600 text-sm font-bold uppercase px-2 mb-4">What is Included</h2>
-                            <ul class="max-w-md space-y-1 text-gray-500 list-inside mb-6">
+                            <h2 className="text-green-600 text-sm font-bold uppercase px-2 mb-4">What is Included</h2>
+                            <ul className="max-w-md space-y-1 text-gray-500 list-inside mb-6">
                                 {tour_package.activities.map((activity, index) =>
-                                    <li key={index} class="flex items-center">
-                                        <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <li key={index} className="flex items-center">
+                                        <svg className="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
                                         {activity}
                                     </li>
                                 )}
                             </ul>
 
                         </div>
-                        <div class="bg-white flex flex-col justify-start px-6">
+                        <div className="bg-white flex flex-col justify-start px-6">
 
-                            <h2 class="text-green-600 text-sm font-bold uppercase px-2 mb-4">Add Ons</h2>
-                            <ul class="max-w-md space-y-1 text-gray-500 list-inside mb-6">
+                            <h2 className="text-green-600 text-sm font-bold uppercase px-2 mb-4">Add Ons</h2>
+                            <ul className="max-w-md space-y-1 text-gray-500 list-inside mb-6">
                                 {tour_package.addons.map((addon, index) =>
-                                    <li key={index} class="flex items-center">
-                                        <svg class="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <li key={index} className="flex items-center">
+                                        <svg className="w-4 h-4 mr-1.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
                                         {addon}
                                     </li>
                                 )}
@@ -67,7 +67,7 @@ function PackageDetailsScreen({ tour_package }) {
                         <div className="border-b border-gray-200 pb-6 flex justify-between mt-2 ml-5 mr-4">
                             <button>
                                 <div className="flex ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /> <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" /> </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-whatsapp" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /> <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" /> </svg>
                                     <p className="ml-1">Wh</p>
                                 </div>
                             </button>
@@ -100,30 +100,30 @@ function PackageDetailsScreen({ tour_package }) {
                     </article>
                 </section>
 
-                <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
-                    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                        <p class="text-xl font-semibold pb-5">About Us</p>
-                        <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
-                        <a href="#" class="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4">
+                <aside className="w-full md:w-1/3 flex flex-col items-center px-3">
+                    <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+                        <p className="text-xl font-semibold pb-5">About Us</p>
+                        <p className="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                        <a href="#" className="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4">
                             Get to know us
                         </a>
                     </div>
 
-                    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                        <p class="text-xl font-semibold pb-5">Instagram</p>
-                        <div class="grid grid-cols-3 gap-3">
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
-                            <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
+                    <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+                        <p className="text-xl font-semibold pb-5">Instagram</p>
+                        <div className="grid grid-cols-3 gap-3">
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
+                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
                         </div>
-                        <a href="#" class="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-6">
-                            <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
+                        <a href="#" className="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-6">
+                            <i className="fab fa-instagram mr-2"></i> Follow @dgrzyb
                         </a>
                     </div>
                 </aside>
