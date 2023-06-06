@@ -37,3 +37,16 @@ Route::resource('/carhire', HireController::class);
 Route::resource('/consultation', ConsultationController::class);
 Route::resource('/packages', PackageController::class);
 Route::resource('/blog', PostController::class);
+
+Route::get('/addteam', function () {
+    return Inertia::render('AdminAddEmployee');
+});
+Route::get('/addpackages', function () {
+    return Inertia::render('AdminAddPackages');
+});
+Route::get('/addevent', function () {
+    return Inertia::render('AdminAddEvent');
+});
+Route::get('/addgallery', function () {
+    return Inertia::render('AdminAddGallery');
+});

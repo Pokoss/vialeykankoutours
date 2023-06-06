@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Components/Navbar'
 import { Input, Textarea } from '@material-tailwind/react'
 import { useForm } from '@inertiajs/react';
+import Footer from './Components/Footer';
 
 function AirportPickUpScreen() {
     const { data, setData, processing, post, reset, errors } = useForm();
@@ -23,14 +24,16 @@ function AirportPickUpScreen() {
             <Navbar />
             <section className="p-6">
                 <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
-                    <div className="w-full px-6 py-12 rounded-md sm:px-12 md:px-16 xl:col-span-2 ">
+                    <div className="w-full px-6 rounded-md sm:px-12 md:px-16 xl:col-span-2 ">
                         <div className="text-center">
                             <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
                                 Airport<span className="text-primary"> Pickups</span>
                             </h3>
+
                         </div>
+                           
                         <p className="my-5">
-                            At kanknou we make sure you have the best holiday by planning your whole journey. Contact us for pickup at the airport
+                        Arriving in Uganda? Start your journey on the right foot with our reliable airport pickup service. Our friendly drivers will be there to welcome you, assist with your luggage, and ensure a comfortable transfer to your destination. Simply fill out the form below, and we'll take care of the rest. Experience the convenience and peace of mind that comes with our professional airport pickup service.
                         </p>
                         <form onSubmit={handleSubmit} className="self-stretch ng-untouched ng-pristine ng-valid">
                             <div>
@@ -57,6 +60,7 @@ function AirportPickUpScreen() {
                     <img src="https://img.freepik.com/free-photo/place-flying-sunset-sky_1112-1132.jpg?w=740&t=st=1682675522~exp=1682676122~hmac=665559ecfe817fb6aa7a1ad36deaa7aad08429d638eac050444c36764589e1d9" alt="" className="object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500" />
                 </div>
             </section>
+            <Footer/>
         </div>
     )
 }

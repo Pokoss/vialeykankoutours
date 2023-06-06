@@ -9,42 +9,42 @@ function AboutUsScreen() {
             'id': '1',
             'name': 'Opoka Daniel',
             'title': 'Software Developer',
-            'image' : 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
+            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
-          },
+        },
         {
             'id': '1',
             'name': 'Opoka Daniel',
             'title': 'Software Developer',
-            'image' : 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
+            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
-          },
+        },
         {
             'id': '1',
             'name': 'Opoka Daniel',
             'title': 'Software Developer',
-            'image' : 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
+            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
-          },
+        },
         {
             'id': '1',
             'name': 'Opoka Daniel',
             'title': 'Software Developer',
-            'image' : 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description' : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
+            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
-          },
+        },
     ]
     return (
         <div>
@@ -66,19 +66,30 @@ function AboutUsScreen() {
                                 </h2>
 
                                 <p>
-                                    Donec porttitor, enim ut dapibus lobortis, lectus sem tincidunt dui, eget ornare lectus ex non
-                                    libero. Nam rhoncus diam ultrices porttitor laoreet. Ut mollis fermentum ex, vel viverra lorem
-                                    volutpat sodales. In ornare porttitor odio sit amet laoreet. Sed laoreet, nulla a posuere
-                                    ultrices, purus nulla tristique turpis, hendrerit rutrum augue quam ut est. Fusce malesuada
-                                    posuere libero, vitae dapibus eros facilisis euismod. Sed sed lobortis justo, ut tincidunt
-                                    velit. Mauris in maximus eros.
+                                    Welcome to Vialey Kankou Tours, a leading tourism company dedicated to providing exceptional travel experiences in Uganda. With a deep passion for showcasing the beauty and cultural richness of this remarkable country, we strive to create unforgettable journeys for our valued customers.<br />
+
+                                    <br />Our Story<br />
+
+                                    Founded in 2022, Vialey Kankou Tours has grown from a humble beginning to become a trusted name in the Ugandan tourism industry. Our journey started with a vision to highlight the hidden treasures and diverse landscapes of Uganda, and to share its unique stories with the world. Over the years, we have continuously evolved, expanding our services and refining our expertise to cater to the needs and desires of discerning travelers.
+                                    <br /><br />
+                                    Our Commitment
+                                    <br />
+                                    At Vialey Kankou Tours, we believe that travel is more than just visiting new places—it's about creating lasting memories, fostering cultural understanding, and leaving a positive impact on the destinations we explore. We are committed to providing ethical and sustainable tourism experiences that not only showcase the beauty of Uganda but also support local communities and conservation efforts.
+                                    <br /><br />
+                                  
+                                  
+                                    Join Us on a Journey of Discovery
+                                    <br />
+                                    Embark on a journey of discovery with Vialey Kankou Tours and uncover the magic of Uganda. Let us guide you through the awe-inspiring landscapes, introduce you to the warm and welcoming Ugandan people, and create cherished memories that will last a lifetime. Contact us today to start planning your unforgettable adventure!
+
+
                                 </p>
                             </div>
                         </main>
                     </div>
                 </div>
                 <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                    <img className="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+                    <img className="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full" src="/Images/web/jumping-dance3.png" alt="" />
                 </div>
             </div>
 
@@ -94,11 +105,11 @@ function AboutUsScreen() {
                 </div>
                 <div className="sm:grid grid-cols-2 gap-6 my-10">
 
-                    {employees && employees.map((employee)=>(
+                    {employees && employees.map((employee) => (
 
-                    <Teamcard employee={employee}/>
+                        <Teamcard employee={employee} />
                     ))}
-                    
+
 
                 </div>
             </div>
@@ -116,7 +127,7 @@ function AboutUsScreen() {
                         <div className="flex flex-wrap items-center">
                             <div className="block w-full lg:flex grow-0 shrink-0 basis-auto lg:w-6/12 xl:w-4/12">
                                 <img
-                                    src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                    src="/Images/web/jumping-dance.jpg"
                                     alt="Trendy Pants and Shoes"
                                     className="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
                                 />
@@ -125,9 +136,7 @@ function AboutUsScreen() {
                                 <div className="px-6 py-12 md:px-12">
                                     <h2 className="text-3xl font-bold mb-4 text-primary display-5">Why people trust us</h2>
                                     <p className="text-gray-500 mb-12">
-                                        Nunc tincidunt vulputate elit. Mauris varius purus malesuada neque iaculis
-                                        malesuada. Aenean gravida magna orci, non efficitur est porta id. Donec magna
-                                        diam.
+                                    At Vialey Kankou Tours, customer satisfaction is at the heart of everything we do. We pride ourselves on delivering exceptional service, ensuring your comfort, safety, and enjoyment throughout your journey. Our team of experienced guides and drivers are passionate about sharing their knowledge and love for Uganda, making your travel experience truly memorable.
                                     </p>
 
                                     <div className="grid lg:gap-x-12 md:grid-cols-3">
@@ -172,10 +181,10 @@ function AboutUsScreen() {
                             </div>
 
                             <div>
-                                <h1 className="text-xl font-semibold text-gray-700">What can i expect at my first consultation?</h1>
+                                <h1 className="text-xl font-semibold text-gray-700">What destinations in Uganda does Vialey Kankou Tours cover?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                                Vialey Kankou Tours covers a wide range of destinations in Uganda, including popular national parks like Bwindi Impenetrable National Park, Queen Elizabeth National Park, Murchison Falls National Park, and more. We also offer city tours in Kampala and cultural experiences in local communities.
                                 </p>
                             </div>
                         </div>
@@ -188,10 +197,10 @@ function AboutUsScreen() {
                             </div>
 
                             <div>
-                                <h1 className="text-xl font-semibold text-gray-700">What are your opening house?</h1>
+                                <h1 className="text-xl font-semibold text-gray-700">Are your packages customizable?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                                Absolutely! We offer both pre-designed packages and fully customizable itineraries. If our pre-designed packages don't meet your specific requirements, our experienced team can tailor an itinerary to match your interests, preferences, and budget. Just let us know your preferences, and we'll create a unique and memorable journey just for you.
                                 </p>
                             </div>
                         </div>
@@ -204,26 +213,10 @@ function AboutUsScreen() {
                             </div>
 
                             <div>
-                                <h1 className="text-xl font-semibold text-gray-700">Do i need a referral?</h1>
+                                <h1 className="text-xl font-semibold text-gray-700">What types of vehicles do you offer for car hire?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700">Is the cost of the appoinment covered by private health insurance?</h1>
-
-                                <p className="mt-2 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                                We have a diverse fleet of well-maintained vehicles available for car hire, including sedans, SUVs, minibusses, and 4x4 vehicles suitable for safaris. Our vehicles are equipped with modern amenities and maintained to ensure your comfort and safety during your travels.
                                 </p>
                             </div>
                         </div>
@@ -239,7 +232,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">What is your cancellation policy?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                                Our cancellation policy may vary depending on the specific package or service booked. We recommend reviewing our terms and conditions or contacting our team directly for detailed information regarding cancellations, refunds, and any applicable fees.
                                 </p>
                             </div>
                         </div>
@@ -252,10 +245,26 @@ function AboutUsScreen() {
                             </div>
 
                             <div>
-                                <h1 className="text-xl font-semibold text-gray-700">What are the parking and public transport options?</h1>
+                                <h1 className="text-xl font-semibold text-gray-700">Is travel insurance included in your packages?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident placeat, consequatur eveniet veritatis quos dignissimos beatae dolores exercitationem laboriosam officia magnam atque blanditiis illum doloremque magni ex corrupti tempora quis.
+                                No, travel insurance is not included in our packages. We highly recommend obtaining comprehensive travel insurance to protect yourself against unexpected events, including trip cancellations, medical emergencies, or lost luggage. Please ensure you have suitable travel insurance coverage before embarking on your journey.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h1 className="text-xl font-semibold text-gray-700">How can I contact Vialey Kankou Tours for further assistance or inquiries?</h1>
+
+                                <p className="mt-2 text-sm text-gray-500">
+                                For further assistance or inquiries, you can reach our friendly team through various channels. You can fill out the contact form on our website, email us at info@vialeykankoutours.com, or call us at +256 789 737973. We'll be more than happy to assist you and provide any additional information you may need.
                                 </p>
                             </div>
                         </div>
@@ -299,8 +308,8 @@ function AboutUsScreen() {
                                         Address
                                     </dt>
                                     <dd className="mt-2 text-base text-gray-500">
-                                        123 Main St, Suite 100<br />
-                                        Anytown, USA 12345
+                                        Kisassi<br />
+                                        Kampala, Uganda
                                     </dd>
                                 </div>
                             </div>
@@ -322,7 +331,7 @@ function AboutUsScreen() {
                                         Phone number
                                     </dt>
                                     <dd className="mt-2 text-base text-gray-500">
-                                        (555) 555-5555
+                                    +256 789 737 973
                                     </dd>
                                 </div>
                             </div>
@@ -344,7 +353,7 @@ function AboutUsScreen() {
                                         Email
                                     </dt>
                                     <dd className="mt-2 text-base text-gray-500">
-                                        info@ourstore.com
+                                        info@vialeykankoutours.com
                                     </dd>
                                 </div>
                             </div>
@@ -366,9 +375,9 @@ function AboutUsScreen() {
                                         Working Hours
                                     </dt>
                                     <dd className="mt-2 text-base text-gray-500">
-                                        Monday - Friday: 9am to 8pm<br />
-                                        Saturday: 10am to 6pm<br />
-                                        Sunday: 12pm to 4pm
+                                        Monday -  Friday: 9am to 6pm<br />
+                                        Saturday - 10am to 5pm<br />
+                                        Sunday -  10am to 3pm
                                     </dd>
                                 </div>
                             </div>
