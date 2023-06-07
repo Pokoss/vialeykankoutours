@@ -10,21 +10,24 @@ import {
   Typography,
   Input,
   Card,
-  CardBody,
   CardHeader,
+  CardBody,
+  Textarea,
 } from "@material-tailwind/react";
 import { useForm } from '@inertiajs/react';
 
 
-function AdminAddGallery({ gallery }) {
+function AdminAddPost({ posts }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
 
   const { data, setData, processing, post, reset, errors } = useForm();
 
+  console.log(errors)
+
   const handleSubmit = e => {
     e.preventDefault();
-    post('/gallery', {
+    post('/blog', {
       preserveScroll: true, preserveState: true,
       onSuccess: () => {
         // toast.success('We have received you request, we shall contact you shortly')
@@ -37,24 +40,25 @@ function AdminAddGallery({ gallery }) {
   return (
     <div>
       <Layout>
+
         <Card className="h-full w-full">
           <CardHeader floated={false} shadow={false} className="rounded-none">
             <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <Typography variant="h5" color="blue-gray">
-                  Gallery
+                  Blog Posts
                 </Typography>
               </div>
               <div className="flex w-full shrink-0 gap-2 md:w-max">
                 <Fragment>
                   <Button color='green' onClick={handleOpen}>
-                    Add Image
+                    Add Post
                   </Button>
-                  <Dialog size='xl' open={open} handler={handleOpen}>
+                  <Dialog size='xxl' open={open} handler={handleOpen}>
                     <form onSubmit={handleSubmit} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                       <DialogHeader>
                         <Typography variant="h5" color="blue-gray">
-                          Add Image
+                          Add Post
                         </Typography>
                       </DialogHeader>
                       <DialogBody divider className="grid place-items-center gap-4">
@@ -63,6 +67,10 @@ function AdminAddGallery({ gallery }) {
                             value={data.title ?? ''} onChange={e => setData('title', e.target.value)} error={errors.title} />
                           <Input color='green' type='file' size="lg" label="Image" accept="image/*"
                             onChange={e => setData('image', e.target.files[0])} error={errors.image} />
+                          <Textarea color='green' size="lg" label="Description"
+                            value={data.description ?? ''} onChange={e => setData('description', e.target.value)} error={errors.description} />
+                          <Textarea color='green' size="lg" label="Content"
+                            value={data.content ?? ''} onChange={e => setData('content', e.target.value)} error={errors.content} />
                         </div>
                       </DialogBody>
                       <DialogFooter className="space-x-2">
@@ -83,7 +91,7 @@ function AdminAddGallery({ gallery }) {
             <table className="w-full min-w-max table-auto text-left">
               <thead>
                 <tr>
-                  {['Title', 'Image'].map((head) => (
+                  {['Title', 'description', 'Image'].map((head) => (
                     <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                       <Typography
                         variant="small"
@@ -97,8 +105,8 @@ function AdminAddGallery({ gallery }) {
                 </tr>
               </thead>
               <tbody>
-                {gallery && gallery.map(({ title, image }, index) => {
-                  const isLast = index === gallery.length - 1;
+                {posts && posts.map(({ title, imageurl, description }, index) => {
+                  const isLast = index === posts.length - 1;
                   const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
 
                   return (
@@ -110,7 +118,12 @@ function AdminAddGallery({ gallery }) {
                       </td>
                       <td className={classes}>
                         <Typography variant="small" color="blue-gray" className="font-normal">
-                          {image}
+                          {description}
+                        </Typography>
+                      </td>
+                      <td className={classes}>
+                        <Typography variant="small" color="blue-gray" className="font-normal">
+                          {imageurl}
                         </Typography>
                       </td>
                       {/* <td className={classes}>
@@ -131,4 +144,4 @@ function AdminAddGallery({ gallery }) {
   )
 }
 
-export default AdminAddGallery
+export default AdminAddPost

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class EventController extends Controller
@@ -13,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::get();
+        $events = Event::latest()->get();
         return Inertia::render('EventsScreen', ['events'=>$events]);
     }
 
@@ -22,7 +23,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $events = Event::latest()->get();
+        return Inertia::render('AdminAddEvent', ['events'=>$events]);
     }
 
     /**
@@ -30,7 +32,31 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'details' => 'string',
+            'activities' => 'string',
+            'date' => 'required|date',
+            'image' => 'required|image',
+        ]);
+
+        $value = $request->input('title') . ' ' . Str::random();
+        $slug = Str::slug($value . '-');
+
+        $file = $request->file('image');
+        $filename = $slug . '.' . $file->extension();
+        $path = $file->storeAs('/images/events', $filename, ['disk' => 'public_uploads']);
+
+        Event::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'details' => $request->input('description'),
+            'activities' => $request->input('activities'),
+            'date' => $request->input('date'),
+            'image' => $path,
+            'slug' => $slug,
+        ]);
     }
 
     /**

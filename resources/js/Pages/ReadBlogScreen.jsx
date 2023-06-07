@@ -3,7 +3,6 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 
 function ReadBlogScreen({ post }) {
-    console.log(post)
     return (
         <div>
             <Navbar />

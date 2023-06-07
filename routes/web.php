@@ -23,11 +23,10 @@ use Inertia\Inertia;
 */
 
 Route::get('/', fn() => Inertia::render('HomeScreen'));
-Route::get('/aboutus', fn() =>Inertia::render('AboutUsScreen'));
+Route::get('/aboutus', fn() => Inertia::render('AboutUsScreen'));
 Route::get('/careers', fn() => Inertia::render('CareersScreen'));
 Route::get('/loginadmin', fn() => Inertia::render('AdminLoginScreen'));
 Route::get('/register', fn() => Inertia::render('RegisterScreen'));
-Route::get('/adminhome', fn() => Inertia::render('AdminHomeScreen'));
 
 Route::resource('/', HomeController::class);
 Route::resource('/events', EventController::class);
@@ -38,15 +37,9 @@ Route::resource('/consultation', ConsultationController::class);
 Route::resource('/packages', PackageController::class);
 Route::resource('/blog', PostController::class);
 
-Route::get('/addteam', function () {
-    return Inertia::render('AdminAddEmployee');
-});
-Route::get('/addpackages', function () {
-    return Inertia::render('AdminAddPackages');
-});
-Route::get('/addevent', function () {
-    return Inertia::render('AdminAddEvent');
-});
-Route::get('/addgallery', function () {
-    return Inertia::render('AdminAddGallery');
-});
+Route::get('/admin/home', [HomeController::class, 'create']);
+Route::get('/admin/team', fn() => Inertia::render('AdminAddEmployee'));
+Route::get('/admin/packages', [PackageController::class, 'create']);
+Route::get('/admin/event', [EventController::class, 'create']);
+Route::get('/admin/gallery', [GalleryController::class, 'create']);
+Route::get('/admin/blog', [PostController::class, 'create']);

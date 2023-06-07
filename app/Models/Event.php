@@ -13,4 +13,14 @@ class Event extends Model
     {
         return 'slug';
     }
+
+    protected $fillable = [
+        'title',
+        'image',
+        'description',
+        'details',
+        'activities',
+        'date',
+        'slug',
+    ];
 }

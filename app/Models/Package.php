@@ -9,6 +9,24 @@ class Package extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'addons',
+        'activities',
+        'start_date',
+        'end_date',
+        'duration',
+        'image',
+        'price',
+        'country',
+        'city',
+        'address',
+        'latitude',
+        'longitude',
+        'slug',
+    ];
+
     public function getRouteKeyName()
     {
         return 'slug';

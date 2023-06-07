@@ -22,7 +22,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        $gallery = Gallery::latest()->get();
+        return Inertia::render('AdminAddGallery', ['gallery' => $gallery]);
     }
 
     /**
@@ -30,7 +31,20 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'string',
+            'image' => 'required|image',
+        ]);
+
+        $file = $request->file('image');
+        $filename = $file->getClientOriginalName();
+
+        $path = $file->storeAs('/images/gallery', $filename, ['disk' => 'public_uploads']);
+
+        Gallery::create([
+            'title' => $request->input('title'),
+            'image' => $path,
+        ]);
     }
 
     /**

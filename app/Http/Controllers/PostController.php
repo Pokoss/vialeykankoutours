@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class PostController extends Controller
@@ -27,7 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $posts = Post::get();
+        return Inertia::render('AdminAddBlog', ['posts' => $posts]);
     }
 
     /**
@@ -35,7 +37,28 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'content' => 'required',
+            'image' => 'required|image|max:2048',
+        ]);
+
+        $value = $request->input('title') . ' ' . Str::random();
+        $slug = Str::slug($value . '-');
+
+        $file = $request->file('image');
+        $filename = $slug . '.' . $file->extension();
+        $path = $file->storeAs('/images/blog', $filename, ['disk' => 'public_uploads']);
+
+        Post::create([
+            'title' => $request->input('title'),
+            'slug' => $slug,
+            'description' => $request->input('description'),
+            'content' => $request->input('content'),
+            'imageurl' => $path,
+        ]);
+
     }
 
     /**
