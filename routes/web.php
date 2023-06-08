@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -25,8 +26,8 @@ use Inertia\Inertia;
 Route::get('/', fn() => Inertia::render('HomeScreen'));
 Route::get('/aboutus', fn() => Inertia::render('AboutUsScreen'));
 Route::get('/careers', fn() => Inertia::render('CareersScreen'));
-Route::get('/loginadmin', fn() => Inertia::render('AdminLoginScreen'));
-Route::get('/register', fn() => Inertia::render('RegisterScreen'));
+// Route::get('/login', fn() => Inertia::render('AdminLoginScreen'));
+// Route::get('/register', fn() => Inertia::render('RegisterScreen'));
 
 Route::resource('/', HomeController::class);
 Route::resource('/events', EventController::class);
@@ -37,9 +38,14 @@ Route::resource('/consultation', ConsultationController::class);
 Route::resource('/packages', PackageController::class);
 Route::resource('/blog', PostController::class);
 
-Route::get('/admin/home', [HomeController::class, 'create']);
-Route::get('/admin/team', fn() => Inertia::render('AdminAddEmployee'));
-Route::get('/admin/packages', [PackageController::class, 'create']);
-Route::get('/admin/event', [EventController::class, 'create']);
-Route::get('/admin/gallery', [GalleryController::class, 'create']);
-Route::get('/admin/blog', [PostController::class, 'create']);
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/home', [HomeController::class, 'create']);
+    Route::get('/admin/team', fn () => Inertia::render('AdminAddEmployee'));
+    Route::get('/admin/packages', [PackageController::class, 'create']);
+    Route::get('/admin/event', [EventController::class, 'create']);
+    Route::get('/admin/gallery', [GalleryController::class, 'create']);
+    Route::get('/admin/blog', [PostController::class, 'create']);
+});
+
+Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'create'])->name('home');
