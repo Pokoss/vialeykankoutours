@@ -11,7 +11,7 @@ function PackageDetailsScreen({ tour_package }) {
                     <article className="w-full flex flex-col shadow my-4">
                         <a href="#" className="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
 
-                        <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
+                        {/* <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
                             <a
                                 href="/"
                                 className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
@@ -21,7 +21,7 @@ function PackageDetailsScreen({ tour_package }) {
                                 Happening on
                             </a>
                             <span className="text-gray-600"> — {tour_package.start_date}</span>
-                        </p>
+                        </p> */}
                         {/* <div href="#" className="text-green-600 text-sm font-bold uppercase p-2">UGX 250,000</div> */}
                         {/* <div>
                             <img src='https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
@@ -102,30 +102,14 @@ function PackageDetailsScreen({ tour_package }) {
 
                 <aside className="w-full md:w-1/3 flex flex-col items-center px-3">
                     <div className="w-full bg-white shadow flex flex-col my-4 p-6">
-                        <p className="text-xl font-semibold pb-5">About Us</p>
-                        <p className="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
-                        <a href="#" className="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4">
-                            Get to know us
+                        <p className="text-xl font-semibold pb-5">Book {tour_package.name}</p>
+                        <p className="pb-2">Immerse yourself in the ultimate adventure with our {tour_package.name} package! Explore the breathtaking landscapes, vibrant cultures, and unforgettable wildlife encounters that await you in Uganda. From the thrilling wildlife safaris in renowned national parks to the captivating cultural experiences in local communities, this package offers a perfect blend of excitement, relaxation, and cultural immersion.<br/>Don't miss out on this incredible opportunity to explore the best of Uganda. Book your {tour_package.name} package now and get ready for an adventure like no other!</p>
+                        <a href="#" className="w-full bg-green-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4">
+                            Book this Package
                         </a>
                     </div>
 
-                    <div className="w-full bg-white shadow flex flex-col my-4 p-6">
-                        <p className="text-xl font-semibold pb-5">Instagram</p>
-                        <div className="grid grid-cols-3 gap-3">
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8" />
-                            <img className="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9" />
-                        </div>
-                        <a href="#" className="w-full bg-yellow-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-6">
-                            <i className="fab fa-instagram mr-2"></i> Follow @dgrzyb
-                        </a>
-                    </div>
+                    
                 </aside>
             </div>
             <Footer />

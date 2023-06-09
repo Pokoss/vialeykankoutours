@@ -10,6 +10,7 @@ import Events from './Components/Events';
 import { Link, useForm } from '@inertiajs/react';
 import { Input, Typography } from '@material-tailwind/react';
 import TestimonialCard from './Components/TestimonialCard';
+import NavbarHome from './Components/NavbarHome';
 
 function HomeScreen({ events, packages, testimonials }) {
   const contactForm = useForm({
@@ -132,7 +133,7 @@ function HomeScreen({ events, packages, testimonials }) {
   }, [])
   return (
     <div className='bg-gray-50'>
-      <Navbar />
+      <NavbarHome />
 
 
 
@@ -144,41 +145,41 @@ function HomeScreen({ events, packages, testimonials }) {
             <SplideSlide>
               <img
                 src="/Images/web/elephants.jpeg"
-                className="h-[750px] object-cover w-full xl:h-[600px]"
+                className="h-[750px] object-cover w-full xl:h-[650px]"
                 alt=""
               />
             </SplideSlide>
             <SplideSlide>
               <img
                 src="/Images/web/chimp-father-son.png"
-                className="h-[750px] object-cover w-full xl:h-[600px]"
+                className="h-[750px] object-cover w-full xl:h-[650px]"
                 alt=""
               />
             </SplideSlide>
             <SplideSlide>
               <img
                 src="/Images/web/giraffe.jpg"
-                className="h-[750px] object-cover w-full xl:h-[600px]"
+                className="h-[750px] object-cover w-full xl:h-[650px]"
                 alt=""
               />
             </SplideSlide>
           </Splide>
         </div>
-        <div className="relative h-[750px] xl:h-[600px]">
+        <div className="relative h-[750px] xl:h-[650px]">
           <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-            <div className="flex flex-col items-center justify-between xl:flex-row">
-              <div className="bg-black bg-opacity-30 p-3 rounded-sm mb-12 xl:mb-0 xl:pr-16 xl:w-7/12 ">
+            <div className="flex flex-col items-center justify-center xl:flex-row">
+              <div className="bg-black grid place-items-center mt-32 items-center bg-opacity-30 p-3 rounded-lg mb-12 xl:mb-0 xl:pr-16 xl:w-8/12 ">
 
-                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none" data-aos='fade-down'>
-                Welcome to<br/><span className='text-primary'>Vialey Kankou Tours</span> 
+                <h2 className="text-center max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none" data-aos='fade-down'>
+                  Welcome To<br /><span className='text-primary'>Vialey Kankou Tours</span>
                 </h2>
-                <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg" data-aos='fade-up'>
-                Your gateway to extraordinary adventures in Uganda. Explore breathtaking landscapes, vibrant cultures, and unforgettable wildlife encounters. Let us guide you through the beauty and warmth of Uganda for an unforgettable journey.
+                <p className="text-center max-w-xl mb-4 text-base text-gray-200 md:text-lg" data-aos='fade-up'>
+                  Your gateway to extraordinary adventures in Uganda. Explore breathtaking landscapes, vibrant cultures, and unforgettable wildlife encounters. Let us guide you through the beauty and warmth of Uganda for an unforgettable journey.
                 </p>
                 <Link
                   href="/aboutus"
                   aria-label=""
-                  className="inline-flex bg-primary p-2 rounded-md items-center font-semibold tracking-wider transition-colors duration-200 text-white hover:text-teal-accent-700"
+                  className="inline-flex bg-primary p-2 justify-center rounded-md items-center font-semibold tracking-wider transition-colors duration-200 text-white hover:text-teal-accent-700"
                   data-aos='fade-right'
                 >
                   Learn more
@@ -192,7 +193,7 @@ function HomeScreen({ events, packages, testimonials }) {
                 </Link>
               </div>
 
-              <div className="w-full max-w-xl xl:px-8 xl:w-5/12 opacity-70   hover:opacity-100">
+              {/* <div className="w-full max-w-xl xl:px-8 xl:w-5/12 opacity-70   hover:opacity-100">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10 " data-aos='zoom-in-left'>
                   <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                     Book your perfect getaway trip
@@ -220,7 +221,7 @@ function HomeScreen({ events, packages, testimonials }) {
                     </p>
                   </form>
                 </div>
-              </div>
+              </div> */}
 
 
 
@@ -230,7 +231,7 @@ function HomeScreen({ events, packages, testimonials }) {
       </div>
       {/*End Hero Section*/}
 
- 
+
 
       {/* Slogan Section*/}
       <div className="max-w-xl mx-auto text-center py-10 md:py-10">
@@ -238,56 +239,10 @@ function HomeScreen({ events, packages, testimonials }) {
         <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6" data-aos='fade-right'>We love to Travel</h2>
         <p className="font-light text-gray-600 mb-6 leading-relaxed" data-aos='fade-down'>
           {/* Welcome to Vialey Kankou Tours - Your Gateway to Memorable Experiences in Uganda! <br/> */}
-        And we are ready to give you the best expericence and memories that nature can give you
+          And we are ready to give you the best expericence and memories that nature can give you
         </p>
       </div>
       {/* End Slogan Section*/}
-
-
-      {/*About Section*/}
-      <div className="grid grid-cols-1 md:grid-cols-2">
-
-        <div className="bg-white p-12 md:p-24 flex justify-end items-center">
-          <Link href="" data-aos='fade-right'>
-            <img src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" className="w-full max-w-md" />
-          </Link>
-        </div>
-
-        <div className="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
-          <div className="max-w-md" data-aos='fade-down'>
-            <div className="w-24 h-2 bg-primary mb-4"></div>
-            <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">About Us</h2>
-            <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">At Vialey Kankou Tours, we are passionate about showcasing the beauty and wonders of Uganda, a country brimming with rich cultural heritage, breathtaking landscapes, and extraordinary wildlife. Whether you're a seasoned explorer or a first-time traveler, we strive to make your journey through Uganda unforgettable. With our comprehensive range of services, we cater to all your travel needs, ensuring a seamless and delightful experience from start to finish.</p>
-            <Link href="/aboutus" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Learn More</Link>
-          </div>
-        </div>
-
-      </div>
-
-      {/* End About Section*/}
-
-      {/* Book Section Section*/}
-      <div className="grid grid-cols-1 md:grid-cols-2">
-
-
-        <div className="bg-white p-12 md:p-24 flex justify-start items-center">
-          <Link className=''href="" data-aos='fade-down'>
-            <img className='' src="/Images/web/two-birds.jpg" />
-          </Link>
-        </div>
-
-        <div className="md:order-first bg-gray-100 p-12 md:p-24 flex justify-end items-center">
-          <div className="max-w-md" data-aos='fade-right'>
-            <div className="w-24 h-2 bg-primary mb-4"></div>
-            <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Custom Package</h2>
-            <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed"> We understand that every traveler is unique, which is why we offer personalized travel packages. Share your interests, preferences, and budget, and our experienced team will curate a bespoke itinerary that showcases the best of Uganda. Whether it's gorilla trekking in Bwindi Impenetrable National Park, exploring the stunning Murchison Falls, or immersing yourself in the vibrant cultures of Kampala, we'll make your dreams come true.</p>
-            <Link href="/packages" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Custom Package</Link>
-          </div>
-        </div>
-
-      </div>
-
-      {/* End Book Section Section*/}
 
       {/*Packages Section Section*/}
 
@@ -320,6 +275,56 @@ function HomeScreen({ events, packages, testimonials }) {
       </div>
       {/* End Package Section Section*/}
 
+      {/* Book Section Section*/}
+      <div className="grid grid-cols-1 md:grid-cols-2">
+
+
+        <div className="bg-white p-12 md:p-24 flex justify-start items-center">
+          <Link className='' href="" data-aos='fade-down'>
+            <img className='' src="/Images/web/two-birds.jpg" />
+          </Link>
+        </div>
+
+        <div className="md:order-first bg-gray-100 p-12 md:p-24 flex justify-end items-center">
+          <div className="max-w-md" data-aos='fade-right'>
+            <div className="w-24 h-2 bg-primary mb-4"></div>
+            <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Custom Package</h2>
+            <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed"> We understand that every traveler is unique, which is why we offer personalized travel packages. Share your interests, preferences, and budget, and our experienced team will curate a bespoke itinerary that showcases the best of Uganda. Whether it's gorilla trekking in Bwindi Impenetrable National Park, exploring the stunning Murchison Falls, or immersing yourself in the vibrant cultures of Kampala, we'll make your dreams come true.</p>
+            <Link href="/packages" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Custom Package</Link>
+          </div>
+        </div>
+
+      </div>
+
+      {/* End Book Section Section*/}
+
+
+
+      {/*About Section*/}
+      {/* <div className="grid grid-cols-1 md:grid-cols-2">
+
+        <div className="bg-white p-12 md:p-24 flex justify-end items-center">
+          <Link href="" data-aos='fade-right'>
+            <img src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" className="w-full max-w-md" />
+          </Link>
+        </div>
+
+        <div className="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
+          <div className="max-w-md" data-aos='fade-down'>
+            <div className="w-24 h-2 bg-primary mb-4"></div>
+            <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">About Us</h2>
+            <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">At Vialey Kankou Tours, we are passionate about showcasing the beauty and wonders of Uganda, a country brimming with rich cultural heritage, breathtaking landscapes, and extraordinary wildlife. Whether you're a seasoned explorer or a first-time traveler, we strive to make your journey through Uganda unforgettable. With our comprehensive range of services, we cater to all your travel needs, ensuring a seamless and delightful experience from start to finish.</p>
+            <Link href="/aboutus" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Learn More</Link>
+          </div>
+        </div>
+
+      </div> */}
+
+      {/* End About Section*/}
+
+
+
+
 
       {/*Airport Pickup  Section*/}
 
@@ -339,7 +344,7 @@ function HomeScreen({ events, packages, testimonials }) {
                 Airport Pickups
               </h3>
               <p className="text-gray-600 mb-8 text-center">
-              Your adventure begins the moment you step off the plane in Uganda. Our reliable and friendly drivers will be waiting to greet you, ensuring a hassle-free transfer to your desired destination. Let us take care of the logistics, so you can focus on enjoying the warm hospitality and diverse offerings of Uganda.
+                Your adventure begins the moment you step off the plane in Uganda. Our reliable and friendly drivers will be waiting to greet you, ensuring a hassle-free transfer to your desired destination. Let us take care of the logistics, so you can focus on enjoying the warm hospitality and diverse offerings of Uganda.
                 <br />
                 <br />
 
@@ -630,7 +635,7 @@ function HomeScreen({ events, packages, testimonials }) {
                   Car Hire
                 </h3>
                 <p className="text-gray-600 mb-8">
-                Flexibility is key when exploring Uganda's diverse landscapes. With our reliable car hire service, you can embark on your own adventure at your own pace. Choose from a wide range of well-maintained vehicles, and enjoy the freedom to create your unique travel experience, whether it's a safari through the national parks or a road trip along the scenic routes.
+                  Flexibility is key when exploring Uganda's diverse landscapes. With our reliable car hire service, you can embark on your own adventure at your own pace. Choose from a wide range of well-maintained vehicles, and enjoy the freedom to create your unique travel experience, whether it's a safari through the national parks or a road trip along the scenic routes.
                   <br />
                   <br />
                   <Link href="/carhire" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Contact to hire</Link>
@@ -687,8 +692,8 @@ function HomeScreen({ events, packages, testimonials }) {
             <div className="lg:max-w-lg" data-aos='fade-right'>
               <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">Looking for expert guidence and advice?</h1>
               <p className="my-4 text-gray-600 dark:text-gray-300">
-              We believe in providing expert guidance and advice to make your travel decisions easier. Our dedicated consultants are well-versed in the intricacies of travel planning in Uganda. Whether you need assistance in choosing the perfect package or require insights on local attractions, our team is here to help you every step of the way, ensuring that your journey through Uganda is filled with incredible moments.
-                
+                We believe in providing expert guidance and advice to make your travel decisions easier. Our dedicated consultants are well-versed in the intricacies of travel planning in Uganda. Whether you need assistance in choosing the perfect package or require insights on local attractions, our team is here to help you every step of the way, ensuring that your journey through Uganda is filled with incredible moments.
+
 
               </p>
               <Link href="/consultation" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Consult with us</Link>
