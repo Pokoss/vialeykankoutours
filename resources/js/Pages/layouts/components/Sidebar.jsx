@@ -55,9 +55,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </svg>
           </button>
           {/* Logo */}
-          <Link href="/home" className="block">
+          <Link href="/" className="block">
             <div className='rounded-full w-24 h-24 p-3 bg-white'>
-              <img src='/images/logo.png' className='object-contain w-full h-full' />
+              <img src='/Images/logo.png' className='object-contain w-full h-full' />
             </div>
 
           </Link>

@@ -652,28 +652,30 @@ function HomeScreen({ events, packages, testimonials }) {
       {/*End Airport Pickup  Section*/}
 
       {/* Events and Travel Section Section*/}
-      <div style={{ backgroundImage: 'url("/Images/events.jpg")', backgroundAttachment: 'fixed', backgroundSize: "cover", backgroundRepeat: "no-repeat" }} >
-        <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
-          <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Events and Travels</h2>
-        </div>
-
-
-        <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12" data-aos='slide-up'>
-          <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
-            {events && events.map((event, index) => (
-              <Link key={index} href='/events/viewevent'>
-                <Events event={event} />
-              </Link>
-            ))}
-
-
+      {events && events.length > 0 &&
+        <div style={{ backgroundImage: 'url("/Images/events.jpg")', backgroundAttachment: 'fixed', backgroundSize: "cover", backgroundRepeat: "no-repeat" }} >
+          <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
+            <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
+            <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Events and Travels</h2>
           </div>
-          <div className='flex w-full justify-center mr-3 mt-7'>
-            <Link href="/events" className="inline-block border-2 border-primary font-semibold text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">More Events</Link>
+
+
+          <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12" data-aos='slide-up'>
+            <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
+              {events && events.map((event, index) => (
+                <Link key={index} href='/events/viewevent'>
+                  <Events event={event} />
+                </Link>
+              ))}
+
+
+            </div>
+            <div className='flex w-full justify-center mr-3 mt-7'>
+              <Link href="/events" className="inline-block border-2 border-primary font-semibold text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">More Events</Link>
+            </div>
           </div>
         </div>
-      </div>
+      }
       {/*End Events and Travel Section Section*/}
 
 
@@ -710,10 +712,12 @@ function HomeScreen({ events, packages, testimonials }) {
       {/*End consultation section*/}
 
       {/*Testimonials  Section*/}
-      <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
-        <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
-        <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Testimonials</h2>
-      </div>
+      {testimonials && testimonials.length > 0 &&
+        <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
+          <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
+          <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Testimonials</h2>
+        </div>
+      }
 
       <Splide options={{
         type: 'loop',
@@ -824,7 +828,7 @@ function HomeScreen({ events, packages, testimonials }) {
                 </div>
                 <div className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
                   <div className="flex flex-wrap">
-                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <a href='tel:256789737973' className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex items-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -838,11 +842,11 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Call Us</p>
-                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">+256 702 456 789</p>
+                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">+256 789 737 973</p>
                         </div>
                       </div>
-                    </div>
-                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6 ">
+                    </a>
+                    <a href='mailto:info@vialeykankoutours.com' className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6 ">
                       <div className="flex items-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -857,23 +861,24 @@ function HomeScreen({ events, packages, testimonials }) {
                           <p className="font-light text-gray-600 text-xs leading-relaxed">info@vialeykankoutours.com</p>
                         </div>
                       </div>
-                    </div>
-                    <div className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    </a>
+                    <Link href='https://instagram.com/vialeykankoutours?igshid=OGQ5ZDc2ODk2ZA==' className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-                            <svg viewBox="0 0 24 24" fill="white" className="h-5">
-                              <path d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z" />
+                            <svg viewBox="0 0 30 30" fill="white" className="h-6 w-6">
+                              <circle cx="15" cy="15" r="4" />
+                              <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z" />
                             </svg>
                           </div>
                         </div>
                         <div className="grow ml-6">
-                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Twitter</p>
-                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">@vialeykankoutours</p>
+                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Instagram</p>
+                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">vialeykankoutours</p>
                         </div>
                       </div>
-                    </div>
-                    <div className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    </Link>
+                    <Link href='https://www.facebook.com/profile.php?id=100064792132405' className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -885,10 +890,9 @@ function HomeScreen({ events, packages, testimonials }) {
                         <div className="grow ml-6">
                           <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Facebook</p>
                           <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">Vianley Kankou Tours</p>
-
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>

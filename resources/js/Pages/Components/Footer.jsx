@@ -26,7 +26,7 @@ function Footer() {
               title="Company"
               className="inline-flex items-center"
             >
-              <img src='/images/logo.png' className='w-16 h-14 mr-1'/>
+              <img src='/Images/logo.png' className='w-16 h-14 mr-1'/>
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
                 Vialey Kankou Tours
               </span>

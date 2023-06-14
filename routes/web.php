@@ -39,6 +39,7 @@ Route::resource('/packages', PackageController::class);
 Route::resource('/blog', PostController::class);
 
 Route::middleware('auth')->group(function () {
+    Route::get('/admin', [HomeController::class, 'create']);
     Route::get('/admin/home', [HomeController::class, 'create']);
     Route::get('/admin/team', fn () => Inertia::render('AdminAddEmployee'));
     Route::get('/admin/packages', [PackageController::class, 'create']);
