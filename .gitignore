@@ -2,6 +2,12 @@
 /node_modules
 /public/hot
 /public/storage
+/public/storage
+/public/images/blog
+/public/images/events
+/public/images/gallery
+/public/images/teams
+/public/images/packages
 /storage/*.key
 /vendor
 .env

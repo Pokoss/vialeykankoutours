@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $posts = Post::get();
+        $posts = Post::latest()->get();
         return Inertia::render('AdminAddBlog', ['posts' => $posts]);
     }
 
@@ -88,8 +88,8 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(String $id)
     {
-        //
+        Post::where('id', $id)->delete();
     }
 }

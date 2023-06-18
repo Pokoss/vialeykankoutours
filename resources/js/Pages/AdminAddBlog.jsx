@@ -13,8 +13,9 @@ import {
   CardHeader,
   CardBody,
   Textarea,
+  IconButton,
 } from "@material-tailwind/react";
-import { useForm } from '@inertiajs/react';
+import { router, useForm } from '@inertiajs/react';
 
 
 function AdminAddPost({ posts }) {
@@ -22,8 +23,6 @@ function AdminAddPost({ posts }) {
   const handleOpen = () => setOpen(!open);
 
   const { data, setData, processing, post, reset, errors } = useForm();
-
-  console.log(errors)
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -35,6 +34,17 @@ function AdminAddPost({ posts }) {
         setData({})
       }
     });
+  }
+
+  const handleDelete = (id) => {
+    if (confirm('Are you sure you want to delete this post?')) {
+      router.delete(`/blog/${id}`, {
+        preserveScroll: true, preserveState: true,
+        onSuccess: () => {
+          // toast.success('We have received you request, we shall contact you shortly')
+        }
+      })
+    }
   }
 
   return (
@@ -54,15 +64,15 @@ function AdminAddPost({ posts }) {
                   <Button color='green' onClick={handleOpen}>
                     Add Post
                   </Button>
-                  <Dialog size='xxl' open={open} handler={handleOpen}>
-                    <form onSubmit={handleSubmit} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+                  <Dialog size='md' open={open} handler={handleOpen}>
+                    <form onSubmit={handleSubmit} className="mt-8 mb-2">
                       <DialogHeader>
                         <Typography variant="h5" color="blue-gray">
                           Add Post
                         </Typography>
                       </DialogHeader>
                       <DialogBody divider className="grid place-items-center gap-4">
-                        <div className="mb-2 flex flex-col gap-3">
+                        <div className="mb-2 flex flex-col gap-3 w-full">
                           <Input color='green' size="lg" label="Title"
                             value={data.title ?? ''} onChange={e => setData('title', e.target.value)} error={errors.title} />
                           <Input color='green' type='file' size="lg" label="Image" accept="image/*"
@@ -91,7 +101,7 @@ function AdminAddPost({ posts }) {
             <table className="w-full min-w-max table-auto text-left">
               <thead>
                 <tr>
-                  {['Title', 'description', 'Image'].map((head) => (
+                  {['Image', 'Title', 'description', ''].map((head) => (
                     <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                       <Typography
                         variant="small"
@@ -105,12 +115,17 @@ function AdminAddPost({ posts }) {
                 </tr>
               </thead>
               <tbody>
-                {posts && posts.map(({ title, imageurl, description }, index) => {
+                {posts && posts.map(({ id, title, imageurl, description }, index) => {
                   const isLast = index === posts.length - 1;
-                  const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+                  const classes = isLast ? "p-4 max-w-xs" : "p-4 max-w-xs border-b border-blue-gray-50";
 
                   return (
                     <tr key={index}>
+                      <td className={classes}>
+                        <Typography variant="small" color="blue-gray" className="font-normal">
+                          <img src={'/' + imageurl} className='w-10 h-10 object-cover' />
+                        </Typography>
+                      </td>
                       <td className={classes}>
                         <Typography variant="small" color="blue-gray" className="font-normal">
                           {title}
@@ -121,16 +136,13 @@ function AdminAddPost({ posts }) {
                           {description}
                         </Typography>
                       </td>
-                      <td className={classes}>
-                        <Typography variant="small" color="blue-gray" className="font-normal">
-                          {imageurl}
-                        </Typography>
+                      <td className={" p-0"}>
+                        <IconButton variant='text' onClick={() => handleDelete(id)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                          </svg>
+                        </IconButton>
                       </td>
-                      {/* <td className={classes}>
-                    <Typography as="a" href="#" variant="small" color="blue" className="font-medium">
-                      Edit
-                    </Typography>
-                  </td> */}
                     </tr>
                   );
                 })}

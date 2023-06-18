@@ -9,38 +9,35 @@ import {
   DialogFooter,
   Typography,
   Input,
-  Textarea,
   Card,
-  CardHeader,
   CardBody,
+  CardHeader,
   IconButton,
 } from "@material-tailwind/react";
 import { router, useForm } from '@inertiajs/react';
 
-function AdminAddEvent({ events }) {
+
+function AdminAddTestimonials({ testimonials }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
 
-  const { data, setData, processing, post, reset, errors, transform } = useForm();
-
-  transform((data) => ({ ...data, 'activities': JSON.stringify((data.activities ?? '').split(',')) }));
+  const { data, setData, processing, post, reset, errors } = useForm();
 
   const handleSubmit = e => {
     e.preventDefault();
-    post('/events', {
+    post('/testimonials', {
       preserveScroll: true, preserveState: true,
       onSuccess: () => {
         // toast.success('We have received you request, we shall contact you shortly')
         reset();
         setData({})
-        handleOpen();
       }
     });
   }
 
   const handleDelete = (id) => {
-    if (confirm('Are you sure you want to delete this event?')) {
-      router.delete(`/events/${id}`, {
+    if (confirm('Are you sure you want to delete this testimonial?')) {
+      router.delete(`/testimonials/${id}`, {
         preserveScroll: true, preserveState: true,
         onSuccess: () => {
           // toast.success('We have received you request, we shall contact you shortly')
@@ -48,7 +45,6 @@ function AdminAddEvent({ events }) {
       })
     }
   }
-
 
   return (
     <div>
@@ -58,40 +54,36 @@ function AdminAddEvent({ events }) {
             <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <Typography variant="h5" color="blue-gray">
-                  Events
+                  Testimonials
                 </Typography>
               </div>
               <div className="flex w-full shrink-0 gap-2 md:w-max">
                 <Fragment>
                   <Button color='green' onClick={handleOpen}>
-                    Add Event
+                    Add Testimonials
                   </Button>
                   <Dialog size='md' open={open} handler={handleOpen}>
-                    <form onSubmit={handleSubmit} className="mt-8 mb-2">
+                    <form onSubmit={handleSubmit} className="mt-8 mb-2 w-full">
                       <DialogHeader>
                         <Typography variant="h5" color="blue-gray">
-                          Add an event
+                          Add Testimonials
                         </Typography>
                       </DialogHeader>
-                      <DialogBody divider className="grid place-items-center gap-4">
+                      <DialogBody divider className="grid place-items-center gap-4 ">
                         <div className="mb-2 flex flex-col gap-3 w-full">
+                          <Input color='green' size="lg" label="Name"
+                            value={data.name ?? ''} onChange={e => setData('name', e.target.value)} error={errors.name} />
                           <Input color='green' size="lg" label="Title"
-                            value={data.title ?? ''} onChange={e => setData('title', e.target.value)} />
-                          <Input color='green' type='file' size="lg" label="Image" accept="image/*"
-                            onChange={e => setData('image', e.target.files[0])} />
-                          <Textarea color='green' size="lg" label="Description"
-                            value={data.description ?? ''} onChange={e => setData('description', e.target.value)} />
-                          <Input color='green' type='datetime-local' size="lg" label="Date"
-                            value={data.date ?? ''} onChange={e => setData('date', e.target.value)} />
-                          <Input color='green' size="lg" label="Activities"
-                            value={data.activities ?? ''} onChange={e => setData('activities', e.target.value)} />
+                            value={data.title ?? ''} onChange={e => setData('title', e.target.value)} error={errors.title} />
+                          <Input color='green' size="lg" label="Content"
+                            value={data.content ?? ''} onChange={e => setData('content', e.target.value)} error={errors.content} />
                         </div>
                       </DialogBody>
                       <DialogFooter className="space-x-2">
                         <Button variant="text" color="blue-gray" onClick={handleOpen}>
                           close
                         </Button>
-                        <Button type='submit' color='green' variant="gradient">
+                        <Button type='submit' color='green' variant="gradient" onClick={handleOpen}>
                           Add
                         </Button>
                       </DialogFooter>
@@ -105,7 +97,7 @@ function AdminAddEvent({ events }) {
             <table className="w-full min-w-max table-auto text-left">
               <thead>
                 <tr>
-                  {['Image', 'Title', 'Description', 'Date', 'Activities', ''].map((head) => (
+                  {['Name', 'Title', 'Content', ''].map((head) => (
                     <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                       <Typography
                         variant="small"
@@ -119,15 +111,15 @@ function AdminAddEvent({ events }) {
                 </tr>
               </thead>
               <tbody>
-                {events && events.map(({ id, title, description, image, date, activities }, index) => {
-                  const isLast = index === events.length - 1;
+                {testimonials && testimonials.map(({ id, title, name, content }, index) => {
+                  const isLast = index === testimonials.length - 1;
                   const classes = isLast ? "p-4 max-w-xs" : "p-4 max-w-xs border-b border-blue-gray-50";
 
                   return (
                     <tr key={index}>
                       <td className={classes}>
                         <Typography variant="small" color="blue-gray" className="font-normal">
-                          <img src={'/' + image} className='w-10 h-10 object-cover' />
+                          {name}
                         </Typography>
                       </td>
                       <td className={classes}>
@@ -137,17 +129,7 @@ function AdminAddEvent({ events }) {
                       </td>
                       <td className={classes}>
                         <Typography variant="small" color="blue-gray" className="font-normal">
-                          {date}
-                        </Typography>
-                      </td>
-                      <td className={classes}>
-                        <Typography variant="small" color="blue-gray" className="font-normal">
-                          {activities ? JSON.parse(activities).join(', ') : ''}
-                        </Typography>
-                      </td>
-                      <td className={classes}>
-                        <Typography variant="small" color="blue-gray" className="font-normal">
-                          {description}
+                          {content}
                         </Typography>
                       </td>
                       <td className={" p-0"}>
@@ -165,8 +147,9 @@ function AdminAddEvent({ events }) {
           </CardBody>
         </Card>
       </Layout>
+
     </div>
   )
 }
 
-export default AdminAddEvent
+export default AdminAddTestimonials

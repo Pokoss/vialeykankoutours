@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TestimonialController extends Controller
 {
@@ -20,7 +21,8 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        $testimonials = Testimonial::latest()->get();
+        return Inertia::render('AdminAddTestimonials', ['testimonials' => $testimonials]);
     }
 
     /**
@@ -28,7 +30,18 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => 'required|string',
+            'name' => 'required|string',
+            'content' => 'required|string',
+        ]);
+
+        Testimonial::create([
+            'title' => $request->input('title'),
+            'name' => $request->input('name'),
+            'content' => $request->input('content'),
+        ]);
     }
 
     /**
@@ -60,6 +73,6 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        //
+        $testimonial->delete();
     }
 }

@@ -8,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PickupController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -37,15 +39,18 @@ Route::resource('/carhire', HireController::class);
 Route::resource('/consultation', ConsultationController::class);
 Route::resource('/packages', PackageController::class);
 Route::resource('/blog', PostController::class);
+Route::resource('/testimonials', TestimonialController::class);
+Route::resource('/team', TeamController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [HomeController::class, 'create']);
     Route::get('/admin/home', [HomeController::class, 'create']);
-    Route::get('/admin/team', fn () => Inertia::render('AdminAddEmployee'));
+    Route::get('/admin/team', [TeamController::class, 'create']);
     Route::get('/admin/packages', [PackageController::class, 'create']);
     Route::get('/admin/event', [EventController::class, 'create']);
     Route::get('/admin/gallery', [GalleryController::class, 'create']);
     Route::get('/admin/blog', [PostController::class, 'create']);
+    Route::get('/admin/testimonials', [TestimonialController::class, 'create']);
 });
 
 Auth::routes();
