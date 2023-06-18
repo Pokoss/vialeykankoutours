@@ -30,6 +30,13 @@ function HomeScreen({ events, packages, testimonials }) {
     })
   }
 
+  function openInstagram() {
+  window.open('https://instagram.com/vialeykankoutours?igshid=OGQ5ZDc2ODk2ZA==', '_blank');
+}
+  function openFacebook() {
+  window.open('https://www.facebook.com/profile.php?id=100064792132405', '_blank');
+}
+
   // const packages = [
   //   {
   //     'id': '1',
@@ -831,7 +838,7 @@ function HomeScreen({ events, packages, testimonials }) {
                     <a href='tel:256789737973' className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex items-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
-                          <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                          <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="headset" className="w-5 text-white"
                               role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                               <path fill="currentColor"
@@ -849,7 +856,7 @@ function HomeScreen({ events, packages, testimonials }) {
                     <a href='mailto:info@vialeykankoutours.com' className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6 ">
                       <div className="flex items-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
-                          <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                          <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                             </svg>
@@ -865,7 +872,7 @@ function HomeScreen({ events, packages, testimonials }) {
                     <a target='_blank' href='https://instagram.com/vialeykankoutours?igshid=OGQ5ZDc2ODk2ZA==' className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
-                          <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                          <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg viewBox="0 0 30 30" fill="white" className="h-6 w-6">
                               <circle cx="15" cy="15" r="4" />
                               <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z" />
@@ -873,23 +880,23 @@ function HomeScreen({ events, packages, testimonials }) {
                           </div>
                         </div>
                         <div className="grow ml-6">
-                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Instagram</p>
-                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">vialeykankoutours</p>
+                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed text-left">Instagram</p>
+                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed text-left">vialeykankoutours</p>
                         </div>
                       </div>
                     </a>
                     <a target='_blank' href='https://www.facebook.com/profile.php?id=100064792132405' className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
-                          <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                          <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg viewBox="0 0 24 24" fill="white" className="h-5 ">
                               <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z" />
                             </svg>
                           </div>
                         </div>
                         <div className="grow ml-6">
-                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Facebook</p>
-                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">Vianley Kankou Tours</p>
+                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed text-left">Facebook</p>
+                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed text-left">Vialey Kankou Tours</p>
                         </div>
                       </div>
                     </a>

@@ -7,44 +7,25 @@ function AboutUsScreen() {
     const employees = [
         {
             'id': '1',
-            'name': 'Opoka Daniel',
-            'title': 'Software Developer',
-            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+            'name': 'Lutaaya Vialey',
+            'title': 'Managing Director/ Director of Operations',
+            'image': '/Images/web/lutaaya.jpeg',
+            'description': 'Lutaaya Vialey is a travel addict who lived in 3 countries ; Uganda, Japan & Germany and l visited nearly 30 countries. He is a graduate of Meiji University in Japan with a bachelor’s degree in Global Japanese Studies. Vialey also studied European Politics & Environment at the University of Düsseldorf.',
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
         },
         {
             'id': '1',
-            'name': 'Opoka Daniel',
-            'title': 'Software Developer',
-            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
+            'name': 'Nakaswa John',
+            'title': 'Director',
+            'image': '/Images/web/Nakaswa.jpeg',
+            'description': 'I am Nakaswa John, a Business Development Consultant linking Japan & Africa. I hold a bachelor’s degree in International Relations with a minor in Japanese Language from Kwansei Gakuin University in Japan. I love traveling and have visited over 15 countries.',
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
         },
-        {
-            'id': '1',
-            'name': 'Opoka Daniel',
-            'title': 'Software Developer',
-            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
-            'facebook': '',
-            "twitter": '',
-            "linkedIn": ''
-        },
-        {
-            'id': '1',
-            'name': 'Opoka Daniel',
-            'title': 'Software Developer',
-            'image': 'https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056_960_720.jpg',
-            'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione reprehenderit maxime illo dolorem recusandae voluptas soluta hic sapiente reiciendis neque natus doloremque molestias, laudantium itaque harum ab libero numquam.',
-            'facebook': '',
-            "twitter": '',
-            "linkedIn": ''
-        },
+     
     ]
     return (
         <div>
@@ -59,13 +40,13 @@ function AboutUsScreen() {
 
                         <div className="pt-1"></div>
 
-                        <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                        <main className="mt-5 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                             <div className="sm:text-center lg:text-left">
-                                <h2 className="my-6 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
+                                <h2 className="my-7 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
                                     About Vialey Kankou
                                 </h2>
 
-                                <p>
+                                <p className='lg:pr-10'>
                                     Welcome to Vialey Kankou Tours, a leading tourism company dedicated to providing exceptional travel experiences in Uganda. With a deep passion for showcasing the beauty and cultural richness of this remarkable country, we strive to create unforgettable journeys for our valued customers.<br />
 
                                     <br />Our Story<br />
@@ -293,7 +274,7 @@ function AboutUsScreen() {
                         <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
                             <div className="flex">
                                 <div className="flex-shrink-0">
-                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-900 text-white">
                                         {/* <!-- Heroicon name: globe-alt --> */}
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -316,7 +297,7 @@ function AboutUsScreen() {
 
                             <div className="flex">
                                 <div className="flex-shrink-0">
-                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-900 text-white">
                                         {/* <!-- Heroicon name: phone --> */}
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -338,7 +319,7 @@ function AboutUsScreen() {
 
                             <div className="flex">
                                 <div className="flex-shrink-0">
-                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-900 text-white">
                                         {/* <!-- Heroicon name: mail --> */}
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -360,7 +341,7 @@ function AboutUsScreen() {
 
                             <div className="flex">
                                 <div className="flex-shrink-0">
-                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-900 text-white">
                                         {/* <!-- Heroicon name: clock --> */}
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
