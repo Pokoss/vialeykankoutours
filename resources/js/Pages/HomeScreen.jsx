@@ -862,7 +862,7 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                       </div>
                     </a>
-                    <Link href='https://instagram.com/vialeykankoutours?igshid=OGQ5ZDc2ODk2ZA==' className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <a target='_blank' href='https://instagram.com/vialeykankoutours?igshid=OGQ5ZDc2ODk2ZA==' className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -877,8 +877,8 @@ function HomeScreen({ events, packages, testimonials }) {
                           <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">vialeykankoutours</p>
                         </div>
                       </div>
-                    </Link>
-                    <Link href='https://www.facebook.com/profile.php?id=100064792132405' className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    </a>
+                    <a target='_blank' href='https://www.facebook.com/profile.php?id=100064792132405' className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-primary rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -892,7 +892,7 @@ function HomeScreen({ events, packages, testimonials }) {
                           <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">Vianley Kankou Tours</p>
                         </div>
                       </div>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -13,8 +13,9 @@ import {
   Card,
   CardBody,
   CardHeader,
+  IconButton,
 } from "@material-tailwind/react";
-import { useForm } from '@inertiajs/react';
+import { router, useForm } from '@inertiajs/react';
 
 function AdminAddPackages({ packages }) {
   const [open, setOpen] = useState(false);
@@ -41,6 +42,17 @@ function AdminAddPackages({ packages }) {
     });
   }
 
+  const handleDelete = (id) => {
+    if (confirm('Are you sure you want to delete this package?')) {
+      router.delete(`/packages/${id}`, {
+        preserveScroll: true, preserveState: true,
+        onSuccess: () => {
+          // toast.success('We have received you request, we shall contact you shortly')
+        }
+      })
+    }
+  }
+
 
   return (
     <div>
@@ -58,15 +70,15 @@ function AdminAddPackages({ packages }) {
                   <Button color='green' onClick={handleOpen}>
                     Add Package
                   </Button>
-                  <Dialog size='xl' open={open} handler={handleOpen}>
-                    <form onSubmit={handleSubmit} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+                  <Dialog size='md' open={open} handler={handleOpen}>
+                    <form onSubmit={handleSubmit} className="mt-8 mb-2">
                       <DialogHeader>
                         <Typography variant="h5" color="blue-gray">
                           Add a package
                         </Typography>
                       </DialogHeader>
                       <DialogBody divider className="grid place-items-center gap-4">
-                        <div className="mb-2 flex flex-col gap-3">
+                        <div className="mb-2 flex flex-col gap-3 w-full">
                           <Input color='green' size="lg" label="Title"
                             value={data.name ?? ''} onChange={e => setData('name', e.target.value)} error={errors.name} />
                           <Input color='green' size="lg" label="Duration" type='number'
@@ -105,7 +117,7 @@ function AdminAddPackages({ packages }) {
           <table className="w-full min-w-max table-auto text-left">
             <thead>
               <tr>
-                {['Title', 'Activities', 'Addons', 'Description'].map((head) => (
+                {['Title', 'Activities', 'Addons', 'Description', ''].map((head) => (
                   <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                     <Typography
                       variant="small"
@@ -119,9 +131,9 @@ function AdminAddPackages({ packages }) {
               </tr>
             </thead>
             <tbody>
-              {packages && packages.map(({ name, description, addons, activities }, index) => {
+              {packages && packages.map(({ id, name, description, addons, activities, slug }, index) => {
                 const isLast = index === packages.length - 1;
-                const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+                const classes = isLast ? "p-4 max-w-xs" : "p-4 max-w-xs border-b border-blue-gray-50";
 
                 return (
                   <tr key={index}>
@@ -141,15 +153,17 @@ function AdminAddPackages({ packages }) {
                       </Typography>
                     </td>
                     <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal">
+                      <Typography variant="small" color="blue-gray" className="font-normal line-clamp-3">
                         {description}
                       </Typography>
                     </td>
-                    {/* <td className={classes}>
-                    <Typography as="a" href="#" variant="small" color="blue" className="font-medium">
-                      Edit
-                    </Typography>
-                  </td> */}
+                    <td className={" p-0"}>
+                      <IconButton variant='text' onClick={() => handleDelete(slug)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-6 h-6">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                        </svg>
+                      </IconButton>
+                    </td>
                   </tr>
                 );
               })}

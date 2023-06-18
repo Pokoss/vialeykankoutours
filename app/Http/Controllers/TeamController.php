@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gallery;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class GalleryController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $gallery = Gallery::latest()->limit(20)->get();
-        return Inertia::render('GalleryScreen', ['gallery' => $gallery]);
+        //
     }
 
     /**
@@ -22,8 +21,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $gallery = Gallery::latest()->get();
-        return Inertia::render('AdminAddGallery', ['gallery' => $gallery]);
+        $team = Team::latest()->get();
+        return Inertia::render('AdminAddEmployee', ['team' => $team]);
     }
 
     /**
@@ -32,17 +31,21 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'string',
+            'name' => 'required|string',
+            'position' => 'string',
+            'description' => 'string',
             'image' => 'required|image',
         ]);
 
         $file = $request->file('image');
         $filename = $file->getClientOriginalName();
 
-        $path = $file->storeAs('/images/gallery', $filename, ['disk' => 'public_uploads']);
+        $path = $file->storeAs('/images/teams', $filename, ['disk' => 'public_uploads']);
 
-        Gallery::create([
-            'title' => $request->input('title'),
+        Team::create([
+            'name' => $request->input('name'),
+            'position' => $request->input('position'),
+            'description' => $request->input('description'),
             'image' => $path,
         ]);
     }
@@ -50,7 +53,7 @@ class GalleryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Gallery $gallery)
+    public function show(Team $team)
     {
         //
     }
@@ -58,7 +61,7 @@ class GalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Gallery $gallery)
+    public function edit(Team $team)
     {
         //
     }
@@ -66,7 +69,7 @@ class GalleryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, Team $team)
     {
         //
     }
@@ -74,8 +77,8 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Gallery $gallery)
+    public function destroy(Team $team)
     {
-        $gallery->delete();
+        $team->delete();
     }
 }

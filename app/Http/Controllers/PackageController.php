@@ -90,6 +90,6 @@ class PackageController extends Controller
      */
     public function destroy(Package $package)
     {
-        //
+        $package->delete();
     }
 }
