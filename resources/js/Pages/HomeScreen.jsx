@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,Fragment,useState } from 'react'
 import Footer from './Components/Footer'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
@@ -10,6 +10,13 @@ import { Link, useForm } from '@inertiajs/react';
 import { Input, Typography } from '@material-tailwind/react';
 import TestimonialCard from './Components/TestimonialCard';
 import NavbarHome from './Components/NavbarHome';
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
 
 function HomeScreen({ events, packages, testimonials }) {
   const contactForm = useForm({
@@ -18,6 +25,10 @@ function HomeScreen({ events, packages, testimonials }) {
     'phone': null,
     'details': 'Booked from home'
   });
+
+  const [open, setOpen] = useState(false);
+
+    const handleOpen = () => setOpen(!open);
 
   const handleSubmitContact = e => {
     e.preventDefault();
@@ -296,7 +307,54 @@ function HomeScreen({ events, packages, testimonials }) {
             <div className="w-24 h-2 bg-primary mb-4"></div>
             <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Custom Package</h2>
             <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed"> We understand that every traveler is unique, which is why we offer personalized travel packages. Share your interests, preferences, and budget, and our experienced team will curate a bespoke itinerary that showcases the best of Uganda. Whether it's gorilla trekking in Bwindi Impenetrable National Park, exploring the stunning Murchison Falls, or immersing yourself in the vibrant cultures of Kampala, we'll make your dreams come true.</p>
-            <Link href="/packages" className="inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">Book Custom Package</Link>
+            
+            <Fragment>
+                            <div className="mb-3 flex gap-3">
+                                <button onClick={handleOpen} className='nline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white' variant="gradient">
+                                Book Custom Package
+                                </button>
+                            </div>
+                            <Dialog open={open} handler={handleOpen} size='xl'>
+                                <DialogHeader>Book Custom Package</DialogHeader>
+                                <DialogBody divider>
+                                    <form>
+                                        <div className='my-2'>
+                                            <Input color="green" label='Name' />
+                                        </div>
+                                        <div className='my-2'>
+                                            <Input color="green" label='Phone' />
+                                        </div>
+                                        <div className='my-2'>
+                                            <Input color="green" label='Email' />
+                                        </div>
+                                        <div className="mt-4 mb-2 sm:mb-4">
+                                            <button
+                                                type="submit"
+                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-primary hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                            >
+                                                Send
+                                            </button>
+                                        </div>
+                                        <p className="text-xs text-gray-600 sm:text-sm">
+                                            We look forword to planning your trip
+                                        </p>
+                                    </form>
+                                </DialogBody>
+                                <DialogFooter>
+                                    <Button
+                                        variant="text"
+                                        color="red"
+                                        onClick={handleOpen}
+                                        className="mr-1"
+                                    >
+                                        <span>Cancel</span>
+                                    </Button>
+                                    <Button variant="gradient" color="green" onClick={handleOpen}>
+                                        <span>Confirm</span>
+                                    </Button>
+                                </DialogFooter>
+                            </Dialog>
+                        </Fragment>
           </div>
         </div>
 

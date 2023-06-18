@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
+import {
+    Button,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
+    Input,
+} from "@material-tailwind/react";
 
 function PackageDetailsScreen({ tour_package }) {
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => setOpen(!open);
     return (
         <div>
             <Navbar />
@@ -103,13 +114,59 @@ function PackageDetailsScreen({ tour_package }) {
                 <aside className="w-full md:w-1/3 flex flex-col items-center px-3">
                     <div className="w-full bg-white shadow flex flex-col my-4 p-6">
                         <p className="text-xl font-semibold pb-5">Book {tour_package.name}</p>
-                        <p className="pb-2">Immerse yourself in the ultimate adventure with our {tour_package.name} package! Explore the breathtaking landscapes, vibrant cultures, and unforgettable wildlife encounters that await you in Uganda. From the thrilling wildlife safaris in renowned national parks to the captivating cultural experiences in local communities, this package offers a perfect blend of excitement, relaxation, and cultural immersion.<br/>Don't miss out on this incredible opportunity to explore the best of Uganda. Book your {tour_package.name} package now and get ready for an adventure like no other!</p>
-                        <a href="#" className="w-full bg-green-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4">
-                            Book this Package
-                        </a>
+                        <p className="pb-2">Immerse yourself in the ultimate adventure with our {tour_package.name} package! Explore the breathtaking landscapes, vibrant cultures, and unforgettable wildlife encounters that await you in Uganda. From the thrilling wildlife safaris in renowned national parks to the captivating cultural experiences in local communities, this package offers a perfect blend of excitement, relaxation, and cultural immersion.<br />Don't miss out on this incredible opportunity to explore the best of Uganda. Book your {tour_package.name} package now and get ready for an adventure like no other!</p>
+
+                        <Fragment>
+                            <div className="mb-3 flex gap-3">
+                                <button onClick={handleOpen} className='w-full bg-green-500 text-white font-bold text-sm uppercase rounded hover:bg-yellow-700 flex items-center justify-center px-2 py-3 mt-4' variant="gradient">
+                                    Book this Package
+                                </button>
+                            </div>
+                            <Dialog open={open} handler={handleOpen} size='xl'>
+                                <DialogHeader>Book {tour_package.name}</DialogHeader>
+                                <DialogBody divider>
+                                    <form>
+                                        <div className='my-2'>
+                                            <Input color="green" label='Name' />
+                                        </div>
+                                        <div className='my-2'>
+                                            <Input color="green" label='Phone' />
+                                        </div>
+                                        <div className='my-2'>
+                                            <Input color="green" label='Email' />
+                                        </div>
+                                        <div className="mt-4 mb-2 sm:mb-4">
+                                            <button
+                                                type="submit"
+                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-primary hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                            >
+                                                Send
+                                            </button>
+                                        </div>
+                                        <p className="text-xs text-gray-600 sm:text-sm">
+                                            We look forword to planning your trip
+                                        </p>
+                                    </form>
+                                </DialogBody>
+                                <DialogFooter>
+                                    <Button
+                                        variant="text"
+                                        color="red"
+                                        onClick={handleOpen}
+                                        className="mr-1"
+                                    >
+                                        <span>Cancel</span>
+                                    </Button>
+                                    <Button variant="gradient" color="green" onClick={handleOpen}>
+                                        <span>Confirm</span>
+                                    </Button>
+                                </DialogFooter>
+                            </Dialog>
+                        </Fragment>
+
                     </div>
 
-                    
+
                 </aside>
             </div>
             <Footer />
