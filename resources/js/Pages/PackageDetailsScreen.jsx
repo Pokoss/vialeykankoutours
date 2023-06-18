@@ -9,19 +9,19 @@ function PackageDetailsScreen({ tour_package }) {
             <div className='container mx-auto flex flex-wrap py-6'>
                 <section className="w-full md:w-2/3 flex flex-col items-center px-3">
                     <article className="w-full flex flex-col shadow my-4">
-                        <a href="#" className="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
+                        <a className="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
 
-                        {/* <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
+                        <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
                             <a
                                 href="/"
                                 className="transition-colors duration-200 text-blue-gray-900 hover:text-deep-purple-accent-700"
                                 aria-label="Category"
                                 title="traveling"
                             >
-                                Happening on
+                                For {tour_package.duration} + days
                             </a>
-                            <span className="text-gray-600"> — {tour_package.start_date}</span>
-                        </p> */}
+                            {/* <span className="text-gray-600"> — {tour_package.start_date}</span> */}
+                        </p>
                         {/* <div href="#" className="text-green-600 text-sm font-bold uppercase p-2">UGX 250,000</div> */}
                         {/* <div>
                             <img src='https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />

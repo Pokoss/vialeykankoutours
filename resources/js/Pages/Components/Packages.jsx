@@ -8,7 +8,7 @@ function Packages({ pack }) {
                 {pack.name}
             </p>
             <p className="mb-4 text-sm text-gray-500">
-                {pack.duration} days
+                {pack.duration}+ days
             </p>
             {/* <p className="text-2xl font-bold text-black mb-4">
         UGX 450,000

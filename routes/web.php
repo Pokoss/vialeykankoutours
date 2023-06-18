@@ -28,6 +28,7 @@ use Inertia\Inertia;
 Route::get('/', fn() => Inertia::render('HomeScreen'));
 Route::get('/aboutus', fn() => Inertia::render('AboutUsScreen'));
 Route::get('/careers', fn() => Inertia::render('CareersScreen'));
+Route::get('/other-services', fn() => Inertia::render('OtherServicesScreen'));
 // Route::get('/login', fn() => Inertia::render('AdminLoginScreen'));
 // Route::get('/register', fn() => Inertia::render('RegisterScreen'));
 

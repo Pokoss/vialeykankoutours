@@ -29,7 +29,7 @@ function ConsultationScreen() {
           <div className="container mx-auto xl:px-32">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="mt-12 lg:mt-0">
-                <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">Tourism<br /><span className="text-primary">Consultation</span></h1>
+                <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">Business<br /><span className="text-primary">Consultation</span></h1>
                 <p className="text-gray-600">
                 At Vialey Kankou Tours, we offer consultation services beyond tourism. If you're interested in connecting with people, starting a business, or exploring non-tourism opportunities in Uganda, our experienced team is here to assist you. Fill out the form below to schedule a consultation, and let us provide you with personalized guidance and resources to help you navigate your interests and aspirations in Uganda.
                 </p>

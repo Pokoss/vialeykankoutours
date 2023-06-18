@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import Footer from './Components/Footer'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
-import Navbar from './Components/Navbar';
 import Packages from './Components/Packages';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
@@ -335,7 +334,7 @@ function HomeScreen({ events, packages, testimonials }) {
 
       {/*Airport Pickup  Section*/}
 
-      <section className="bg-white border-b py-8">
+      {/* <section className="bg-white border-b py-8">
         <div className="max-w-xl mx-auto text-center" data-aos='fade-down'>
           <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Pickups and Hires</h2>
@@ -651,7 +650,7 @@ function HomeScreen({ events, packages, testimonials }) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 
@@ -689,8 +688,8 @@ function HomeScreen({ events, packages, testimonials }) {
 
 
 
-      {/*Consultation  Section*/}
-      <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
+      {/* Consultation  Section*/}
+      {/* <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
         <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
         <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Consultation</h2>
 
@@ -714,9 +713,9 @@ function HomeScreen({ events, packages, testimonials }) {
             <img className="object-cover w-full h-full max-w-2xl rounded-md" src="/Images/web/consultaion-image.avif" alt="glasses photo" />
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/*End consultation section*/}
+      {/*End consultation section */}
 
       {/*Testimonials  Section*/}
       {testimonials && testimonials.length > 0 &&
