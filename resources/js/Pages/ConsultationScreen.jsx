@@ -31,7 +31,7 @@ function ConsultationScreen() {
               <div className="mt-12 lg:mt-0">
                 <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">Tourism<br /><span className="text-primary">Consultation</span></h1>
                 <p className="text-gray-600">
-                Planning a trip to Uganda can be an exciting yet complex endeavor. At Vialey Kankou Tours, our experienced travel consultants are here to guide you every step of the way. From helping you choose the perfect itinerary to providing valuable insights on local attractions, our experts are committed to ensuring that your Ugandan experience exceeds your expectations. Fill out the form to schedule a consultation with our knowledgeable team. Whether you have specific travel preferences or simply need advice on making the most of your time in Uganda, we're here to offer personalized recommendations and ensure that your journey through this beautiful country is everything you've dreamed of and more.
+                At Vialey Kankou Tours, we offer consultation services beyond tourism. If you're interested in connecting with people, starting a business, or exploring non-tourism opportunities in Uganda, our experienced team is here to assist you. Fill out the form below to schedule a consultation, and let us provide you with personalized guidance and resources to help you navigate your interests and aspirations in Uganda.
                 </p>
               </div>
               <div className="mb-12 lg:mb-0">

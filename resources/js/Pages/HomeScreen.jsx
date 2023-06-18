@@ -129,7 +129,7 @@ function HomeScreen({ events, packages, testimonials }) {
 
   const mystyle = {
     backgroundAttachment: 'fixed',
-    backgroundImage: 'url("https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg")'
+    backgroundImage: 'url("/Images/web/deer.jpg")'
   };
   const myPickupStyle = {
     backgroundImage: 'url("/Images/events.jpg")'
@@ -701,7 +701,7 @@ function HomeScreen({ events, packages, testimonials }) {
             <div className="lg:max-w-lg" data-aos='fade-right'>
               <h1 className="text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl">Looking for expert guidence and advice?</h1>
               <p className="my-4 text-gray-600 dark:text-gray-300">
-                We believe in providing expert guidance and advice to make your travel decisions easier. Our dedicated consultants are well-versed in the intricacies of travel planning in Uganda. Whether you need assistance in choosing the perfect package or require insights on local attractions, our team is here to help you every step of the way, ensuring that your journey through Uganda is filled with incredible moments.
+              Discover the endless possibilities that Uganda has to offer beyond tourism with our expert consultation services. Whether you're looking to connect with locals, start a business, or explore non-tourism opportunities, Vialey Kankou Tours is here to assist you. Our knowledgeable team will provide personalized guidance and resources to help you navigate your interests and aspirations in Uganda. From connecting with like-minded individuals to exploring potential business ventures, we'll be your trusted partner on this journey of exploration and discovery. Schedule a consultation with us today and unlock the hidden gems of Uganda beyond the traditional tourist experience.
 
 
               </p>
@@ -711,7 +711,7 @@ function HomeScreen({ events, packages, testimonials }) {
           </div>
 
           <div className="flex items-center justify-center w-full h-96 lg:w-1/2" data-aos='fade-down'>
-            <img className="object-cover w-full h-full max-w-2xl rounded-md" src="https://img.freepik.com/free-photo/close-up-man-holding-tickets_23-2149080807.jpg?w=740&t=st=1682678572~exp=1682679172~hmac=a1a51b2ccd153e0c72988153a1f30efec85bfa0ffe994cab8b701e85a487948a" alt="glasses photo" />
+            <img className="object-cover w-full h-full max-w-2xl rounded-md" src="/Images/web/consultaion-image.avif" alt="glasses photo" />
           </div>
         </div>
       </div>
@@ -755,7 +755,8 @@ function HomeScreen({ events, packages, testimonials }) {
 
         <section className="mb-32 text-gray-800">
 
-          <div className="relative overflow-hidden h-96 bg-no-repeat bg-cover" style={{ backgroundPosition: '50%', backgroundImage: "url('https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg')", backgroundAttachment: 'fixed', backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
+          <div className="relative overflow-hidden h-96 bg-no-repeat bg-cover" 
+          style={{ backgroundPosition: '50%', backgroundImage: "url('/Images/web/deer.jpg')", backgroundAttachment: 'fixed', backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
           >
             <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
               <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
@@ -873,10 +874,11 @@ function HomeScreen({ events, packages, testimonials }) {
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-                            <svg viewBox="0 0 30 30" fill="white" className="h-6 w-6">
+                          <img  className='w-full h-full object-fill' src='/Images/web/instagram.png'/>
+                            {/* <svg viewBox="0 0 30 30" fill="white" className="h-6 w-6">
                               <circle cx="15" cy="15" r="4" />
                               <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z" />
-                            </svg>
+                            </svg> */}
                           </div>
                         </div>
                         <div className="grow ml-6">
@@ -885,13 +887,14 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                       </div>
                     </button>
-                    <button onClick={openFacebook} className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <button onClick={openFacebook} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-                            <svg viewBox="0 0 24 24" fill="white" className="h-5 ">
+                            <img  className='object-fill' src='/Images/web/facebook.png'/>
+                            {/* <svg viewBox="0 0 24 24" fill="white" className="h-5 ">
                               <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z" />
-                            </svg>
+                            </svg> */}
                           </div>
                         </div>
                         <div className="grow ml-6">
@@ -900,7 +903,12 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                       </div>
                     </button>
+                    <button onClick={openFacebook} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <img  className='object-fill' src='/Images/web/instagram.jpeg'/>
+                    </button>
                   </div>
+
+                  
                 </div>
               </div>
             </div>
