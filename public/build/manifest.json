@@ -20,7 +20,7 @@
     "dynamicImports": [
       "node_modules/web-vitals/dist/web-vitals.js"
     ],
-    "file": "assets/app-bbab3866.js",
+    "file": "assets/app-45d76750.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
