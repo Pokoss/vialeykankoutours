@@ -16,9 +16,9 @@ function Navbar() {
                 <div>
                     <div className="flex items-center  justify-between py-2 md:py-3 md:block">
                         <Link className='flex h-full items-center' href="/">
-                            <img src='/Images/logo.png' className='w-24 h-20 mr-4' />
+                            <img src='/Images/logo.png' className='w-28 h-24 mr-4' />
                             <div className='h-full align-middle justify-center  content-center text-center pt-2' >
-                                <h2 className="text-2xl  md:text-3xl font-bold text-white">Vialey Kankou Tours</h2>
+                                <h2 className="text-2xl  md:text-2xl font-bold text-white">Vialey Kankou Tours</h2>
                             </div>
                         </Link>
 
