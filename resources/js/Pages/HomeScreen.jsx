@@ -129,7 +129,7 @@ function HomeScreen({ events, packages, testimonials }) {
 
   const mystyle = {
     backgroundAttachment: 'fixed',
-    backgroundImage: 'url("/Images/web/deer.jpg")'
+    backgroundImage: 'url("https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg")'
   };
   const myPickupStyle = {
     backgroundImage: 'url("/Images/events.jpg")'
@@ -888,8 +888,6 @@ function HomeScreen({ events, packages, testimonials }) {
                       </div>
                     </button>
                     <button onClick={openFacebook} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                    </a>
-                    <a target='_blank' href='https://www.facebook.com/profile.php?id=100064792132405' className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -908,7 +906,6 @@ function HomeScreen({ events, packages, testimonials }) {
                     <button onClick={openFacebook} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                     <img  className='object-fill' src='/Images/web/instagram.jpeg'/>
                     </button>
-                    </a>
                   </div>
 
                   
