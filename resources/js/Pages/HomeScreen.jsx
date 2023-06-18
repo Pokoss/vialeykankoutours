@@ -870,23 +870,6 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                       </div>
                     </a>
-                    <button onClick={openInstagram} className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
-                        <div className="shrink-0">
-                          <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-                          <img  className='w-full h-full object-fill' src='/Images/web/instagram.png'/>
-                            {/* <svg viewBox="0 0 30 30" fill="white" className="h-6 w-6">
-                              <circle cx="15" cy="15" r="4" />
-                              <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z" />
-                            </svg> */}
-                          </div>
-                        </div>
-                        <div className="grow ml-6">
-                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed text-left">Instagram</p>
-                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed text-left">vialeykankoutours</p>
-                        </div>
-                      </div>
-                    </button>
                     <button onClick={openFacebook} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
@@ -903,7 +886,25 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                       </div>
                     </button>
-                    <button onClick={openFacebook} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <button onClick={openInstagram} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                          <img  className='w-full h-full object-fill' src='/Images/web/instagram.png'/>
+                            {/* <svg viewBox="0 0 30 30" fill="white" className="h-6 w-6">
+                              <circle cx="15" cy="15" r="4" />
+                              <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z" />
+                            </svg> */}
+                          </div>
+                        </div>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed text-left">Instagram</p>
+                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed text-left">vialeykankoutours</p>
+                        </div>
+                      </div>
+                    </button>
+                    
+                    <button onClick={openInstagram} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                     <img  className='object-fill' src='/Images/web/instagram.jpeg'/>
                     </button>
                   </div>

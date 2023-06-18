@@ -130,37 +130,23 @@ function Footer() {
                 Social Media
               </p>
               <ul className="mt-2 space-y-2">
+                
                 <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
+                  <button
+                    onClick={openFacebook}
                     className="transition-colors duration-300 text-white hover:text-teal-accent-400"
                   >
                     Facebook
-                  </a>
+                  </button>
                 </li>
+                
                 <li>
-                  <a
-                    href="/"
+                  <button
+                    onClick={openInstagram}
                     className="transition-colors duration-300 text-white hover:text-teal-accent-400"
                   >
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                    className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                  >
-                    LinkedIn
-                  </a>
+                    Instagram
+                  </button>
                 </li>
                
               </ul>
