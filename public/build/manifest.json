@@ -1,18 +1,26 @@
 {
+  "node_modules/web-vitals/dist/web-vitals.js": {
+    "file": "assets/web-vitals-dfcc5b9a.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/web-vitals/dist/web-vitals.js"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-88418740.css",
+    "file": "assets/app-0a76f92b.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-f549d00d.css",
+    "file": "assets/app-d3ea93b3.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-f549d00d.css"
+      "assets/app-d3ea93b3.css"
     ],
-    "file": "assets/app-6af16820.js",
+    "dynamicImports": [
+      "node_modules/web-vitals/dist/web-vitals.js"
+    ],
+    "file": "assets/app-3f52d2df.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
