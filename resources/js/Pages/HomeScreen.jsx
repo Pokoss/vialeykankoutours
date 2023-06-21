@@ -1,4 +1,4 @@
-import React, { useEffect,Fragment,useState } from 'react'
+import React, { useEffect, Fragment, useState } from 'react'
 import Footer from './Components/Footer'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
@@ -28,7 +28,7 @@ function HomeScreen({ events, packages, testimonials }) {
 
   const [open, setOpen] = useState(false);
 
-    const handleOpen = () => setOpen(!open);
+  const handleOpen = () => setOpen(!open);
 
   const handleSubmitContact = e => {
     e.preventDefault();
@@ -41,11 +41,11 @@ function HomeScreen({ events, packages, testimonials }) {
   }
 
   function openInstagram() {
-  window.open('https://instagram.com/vialeykankoutours?igshid=OGQ5ZDc2ODk2ZA==', '_blank');
-}
+    window.open('https://instagram.com/vialeykankoutours?igshid=OGQ5ZDc2ODk2ZA==', '_blank');
+  }
   function openFacebook() {
-  window.open('https://www.facebook.com/profile.php?id=100064792132405', '_blank');
-}
+    window.open('https://www.facebook.com/profile.php?id=100064792132405', '_blank');
+  }
 
   // const packages = [
   //   {
@@ -239,17 +239,11 @@ function HomeScreen({ events, packages, testimonials }) {
                   </form>
                 </div>
               </div> */}
-
-
-
             </div>
           </div>
         </div>
       </div>
       {/*End Hero Section*/}
-
-
-
       {/* Slogan Section*/}
       <div className="max-w-xl mx-auto text-center py-10 md:py-10">
         <div className="w-24 h-2 bg-primary mb-4 mx-auto" data-aos='fade-down'></div>
@@ -260,19 +254,14 @@ function HomeScreen({ events, packages, testimonials }) {
         </p>
       </div>
       {/* End Slogan Section*/}
-
       {/*Packages Section Section*/}
-
       {/* <div className="flex justify-center items-center h-screen">
-      
       </div> */}
-
       <div style={mystyle}>
         <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
           <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
           <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Our Packages</h2>
         </div>
-
         <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12" data-aos='slide-up'>
           <div className="grid gap-8 lg:grid-cols-4 md:grid-cols-2 md:max-w-full sm:max-w-sm sm:mx-auto lg:max-w-full">
             {
@@ -282,7 +271,6 @@ function HomeScreen({ events, packages, testimonials }) {
                 </Link>
               ))
             }
-
           </div>
           <div className='flex w-full justify-center mr-3 mt-7'>
             <Link href="/packages" className="inline-block border-2 border-primary font-semibold text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white">More Packages</Link>
@@ -307,54 +295,54 @@ function HomeScreen({ events, packages, testimonials }) {
             <div className="w-24 h-2 bg-primary mb-4"></div>
             <h2 className="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Custom Package</h2>
             <p className="font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed"> We understand that every traveler is unique, which is why we offer personalized travel packages. Share your interests, preferences, and budget, and our experienced team will curate a bespoke itinerary that showcases the best of Uganda. Whether it's gorilla trekking in Bwindi Impenetrable National Park, exploring the stunning Murchison Falls, or immersing yourself in the vibrant cultures of Kampala, we'll make your dreams come true.</p>
-            
+
             <Fragment>
-                            <div className="mb-3 flex gap-3">
-                                <button onClick={handleOpen} className='nline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white' variant="gradient">
-                                Book Custom Package
-                                </button>
-                            </div>
-                            <Dialog open={open} handler={handleOpen} size='xl'>
-                                <DialogHeader>Book Custom Package</DialogHeader>
-                                <DialogBody divider>
-                                    <form>
-                                        <div className='my-2'>
-                                            <Input color="green" label='Name' />
-                                        </div>
-                                        <div className='my-2'>
-                                            <Input color="green" label='Phone' />
-                                        </div>
-                                        <div className='my-2'>
-                                            <Input color="green" label='Email' />
-                                        </div>
-                                        <div className="mt-4 mb-2 sm:mb-4">
-                                            <button
-                                                type="submit"
-                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-primary hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                            >
-                                                Send
-                                            </button>
-                                        </div>
-                                        <p className="text-xs text-gray-600 sm:text-sm">
-                                            We look forword to planning your trip
-                                        </p>
-                                    </form>
-                                </DialogBody>
-                                <DialogFooter>
-                                    <Button
-                                        variant="text"
-                                        color="red"
-                                        onClick={handleOpen}
-                                        className="mr-1"
-                                    >
-                                        <span>Cancel</span>
-                                    </Button>
-                                    <Button variant="gradient" color="green" onClick={handleOpen}>
-                                        <span>Confirm</span>
-                                    </Button>
-                                </DialogFooter>
-                            </Dialog>
-                        </Fragment>
+              <div className="mb-3 flex gap-3">
+                <button onClick={handleOpen} className='inline-block border-2 border-primary font-light text-primary text-sm uppercase tracking-widest py-3 px-8 hover:bg-primary hover:text-white' variant="gradient">
+                  Book Custom Package
+                </button>
+              </div>
+              <Dialog open={open} handler={handleOpen} size='xl'>
+                <DialogHeader>Book Custom Package</DialogHeader>
+                <DialogBody divider>
+                  <form>
+                    <div className='my-2'>
+                      <Input color="green" label='Name' />
+                    </div>
+                    <div className='my-2'>
+                      <Input color="green" label='Phone' />
+                    </div>
+                    <div className='my-2'>
+                      <Input color="green" label='Email' />
+                    </div>
+                    <div className="mt-4 mb-2 sm:mb-4">
+                      <button
+                        type="submit"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-primary hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                      >
+                        Send
+                      </button>
+                    </div>
+                    <p className="text-xs text-gray-600 sm:text-sm">
+                      We look forword to planning your trip
+                    </p>
+                  </form>
+                </DialogBody>
+                <DialogFooter>
+                  <Button
+                    variant="text"
+                    color="red"
+                    onClick={handleOpen}
+                    className="mr-1"
+                  >
+                    <span>Cancel</span>
+                  </Button>
+                  <Button variant="gradient" color="green" onClick={handleOpen}>
+                    <span>Confirm</span>
+                  </Button>
+                </DialogFooter>
+              </Dialog>
+            </Fragment>
           </div>
         </div>
 
@@ -812,8 +800,8 @@ function HomeScreen({ events, packages, testimonials }) {
 
         <section className="mb-32 text-gray-800">
 
-          <div className="relative overflow-hidden h-96 bg-no-repeat bg-cover" 
-          style={{ backgroundPosition: '50%', backgroundImage: "url('/Images/web/deer.jpg')", backgroundAttachment: 'fixed', backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
+          <div className="relative overflow-hidden h-96 bg-no-repeat bg-cover"
+            style={{ backgroundPosition: '50%', backgroundImage: "url('/Images/web/deer.jpg')", backgroundAttachment: 'fixed', backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
           >
             <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
               <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
@@ -931,7 +919,7 @@ function HomeScreen({ events, packages, testimonials }) {
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-                            <img  className='object-fill' src='/Images/web/facebook.png'/>
+                            <img className='object-fill' src='/Images/web/facebook.png' />
                             {/* <svg viewBox="0 0 24 24" fill="white" className="h-5 ">
                               <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z" />
                             </svg> */}
@@ -947,7 +935,7 @@ function HomeScreen({ events, packages, testimonials }) {
                       <div className="flex align-start bg-white p-2 rounded bg-opacity-70">
                         <div className="shrink-0">
                           <div className="p-4 bg-yellow-900 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-                          <img  className='w-full h-full object-fill' src='/Images/web/instagram.png'/>
+                            <img className='w-full h-full object-fill' src='/Images/web/instagram.png' />
                             {/* <svg viewBox="0 0 30 30" fill="white" className="h-6 w-6">
                               <circle cx="15" cy="15" r="4" />
                               <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z" />
@@ -960,13 +948,13 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                       </div>
                     </button>
-                    
+
                     <button onClick={openInstagram} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                    <img  className='object-fill' src='/Images/web/instagram.jpeg'/>
+                      <img className='object-fill' src='/Images/web/instagram.jpeg' />
                     </button>
                   </div>
 
-                  
+
                 </div>
               </div>
             </div>

@@ -20,7 +20,7 @@ function PackageDetailsScreen({ tour_package }) {
             <div className='container mx-auto flex flex-wrap py-6'>
                 <section className="w-full md:w-2/3 flex flex-col items-center px-3">
                     <article className="w-full flex flex-col shadow my-4">
-                        <a className="text-3xl font-bold hover:text-gray-700 p-2">{tour_package.name}</a>
+                        <a className="text-3xl font-bold hover:text-gray-700 p-2"> {tour_package.name} </a>
 
                         <p className="mb-3 p-2 text-xs font-semibold tracking-wide uppercase">
                             <a
@@ -34,9 +34,9 @@ function PackageDetailsScreen({ tour_package }) {
                             {/* <span className="text-gray-600"> — {tour_package.start_date}</span> */}
                         </p>
                         {/* <div href="#" className="text-green-600 text-sm font-bold uppercase p-2">UGX 250,000</div> */}
-                        {/* <div>
-                            <img src='https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
-                        </div> */}
+                        <div>
+                            <img src={tour_package.image_url} />
+                        </div>
                         <div className="bg-white flex flex-col justify-start p-6">
 
                             <h2 className="text-green-600 text-sm font-bold uppercase p-2">Details</h2>

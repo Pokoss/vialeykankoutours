@@ -80,7 +80,7 @@ function AdminAddEmployee({ team }) {
                           <Input color='green' size="lg" label="Description"
                             value={data.description ?? ''} onChange={e => setData('description', e.target.value)} error={errors.description} />
                           <Input color='green' type='file' size="lg" label="Image" accept="image/*"
-                            onChange={e => setData('image', e.target.files[0])} error={errors.image} />
+                            onChange={e => setData('image', e.target.files[0])} error={errors.image}/>
                         </div>
                     </DialogBody>
                     <DialogFooter className="space-x-2">
