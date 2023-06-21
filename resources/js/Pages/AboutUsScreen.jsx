@@ -10,7 +10,19 @@ function AboutUsScreen() {
             'name': 'Lutaaya Vialey',
             'title': 'Managing Director/ Director of Operations',
             'image': '/Images/web/lutaaya.jpeg',
-            'description': 'Lutaaya Vialey is a travel addict who lived in 3 countries ; Uganda, Japan & Germany and l visited nearly 30 countries. He is a graduate of Meiji University in Japan with a bachelor’s degree in Global Japanese Studies. Vialey also studied European Politics & Environment at the University of Düsseldorf.',
+            'description': `Vialey has an endless passion for sharing the Ugandan & African narrative. This he has done by constantly attending and organizing events aimed at sharing more about his life experiences growing up in Uganda and Africa as a whole.<br/><br/> 
+            Notable among others are; <br/>
+            - The Annual African Child Day organized by UNICEF in Kumamoto Japan<br/>
+            - Ashinaga Fundraising Campaigns across Japan<br/>
+            - English Summer Camp where he interacted with different Japanese school children in the summers assisting them to improve their English skills while sharing while teaching them about his culture back in Uganda.<br/>
+            He also organized events such as<br/>
+            - International Food Day during his time in Germany where over 100 students from across the world gathered to share food, drinks, music and stories. <br/>
+            
+            After spending almost 10 years away living in Japan and Germany, Vialey decided that it was time to get back to his dream as earlier indicated in his University application that he would become the bridge between Uganda and Japan.<br/> 
+            
+            He returned to Uganda with the faith that through the friends he had made, he would start up a tour company that offers a personalized touch to each of their clients. <br/>
+            
+            That saw the birth of Vialey Kankou Tours which he hopes will grow to become one of the most reputable tour companies not only in Uganda but in East Africa as a region.`,
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
@@ -122,17 +134,17 @@ function AboutUsScreen() {
 
                                     <div className="grid lg:gap-x-12 md:grid-cols-3">
                                         <div className="mb-12 md:mb-0">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">1356</h2>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">0</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Happy tourists</h5>
                                         </div>
 
                                         <div className="mb-12 md:mb-0">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">62%</h2>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">0%</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Growth</h5>
                                         </div>
 
                                         <div className="">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">93</h2>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">0</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Tours</h5>
                                         </div>
                                     </div>

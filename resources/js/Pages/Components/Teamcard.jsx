@@ -1,20 +1,23 @@
 import { Tooltip, Typography } from '@material-tailwind/react'
-import React from 'react'
+import React, { Fragment, useState } from 'react'
+import {
+    Button,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
+  } from "@material-tailwind/react";
 
 function Teamcard({employee}) {
+    const [open, setOpen] = useState(false);
+ 
+  const handleOpen = () => setOpen(!open);
     return (
-        <Tooltip content={
-            <div className="w-80">
-              <Typography
-                variant="small"
-                color="white" 
-                className="font-normal opacity-80"
-              >
-                {employee.description}
-              </Typography>
-            </div>
-          } placement="bottom-bottom">
-        <div className="max-w-sm w-full lg:max-w-full lg:flex mx-auto my-4">
+        <Fragment>
+
+        
+        
+        <div onClick={handleOpen} className="max-w-sm w-full lg:max-w-full lg:flex mx-auto my-4">
             <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                 style={{ backgroundImage: `url('${employee.image}')` }}
                 title="Woman holding a mug">
@@ -38,8 +41,27 @@ function Teamcard({employee}) {
 
             </div>
         </div>
-        </Tooltip>
+      
+
+
+        <Dialog open={open} handler={handleOpen} size='xl'>
+        <DialogHeader>{employee.name}</DialogHeader>
+        <DialogBody divider className="h-[40rem] overflow-scroll">
+          <Typography className="font-normal">
+            <div dangerouslySetInnerHTML={{__html:employee.description}}>
+            </div>
+            
+          </Typography>
+        </DialogBody>
+        <DialogFooter className="space-x-2">
+          <Button variant="outlined" color="red" onClick={handleOpen}>
+            close
+          </Button>
+        </DialogFooter>
+      </Dialog>
+        </Fragment>
     )
+
 }
 
 export default Teamcard
