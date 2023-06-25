@@ -28,16 +28,18 @@ function AboutUsScreen() {
             "linkedIn": ''
         },
         {
-            'id': '1',
+            'id': '2',
             'name': 'Nakaswa John',
             'title': 'Director',
             'image': '/Images/web/Nakaswa.jpeg',
-            'description': 'I am Nakaswa John, a Business Development Consultant linking Japan & Africa. I hold a bachelor’s degree in International Relations with a minor in Japanese Language from Kwansei Gakuin University in Japan. I love traveling and have visited over 15 countries.',
+            'description': `Nakaswa John is a Business Development Consultant linking Japan & Africa. He holds a bachelor’s degree in International Relations with a minor in Japanese Language from Kwansei Gakuin University in Japan. He love traveling and have visited over 15 countries.
+<br/></br>
+            After spending over 10 years in Japan where he still resides, he is eager to share his expertise in order to give the most memorable trips to all our guests.`,
             'facebook': '',
             "twitter": '',
             "linkedIn": ''
         },
-     
+
     ]
     return (
         <div>
@@ -63,14 +65,18 @@ function AboutUsScreen() {
 
                                     <br />Our Story<br />
 
-                                    Founded in 2022, Vialey Kankou Tours has grown from a humble beginning to become a trusted name in the Ugandan tourism industry. Our journey started with a vision to highlight the hidden treasures and diverse landscapes of Uganda, and to share its unique stories with the world. Over the years, we have continuously evolved, expanding our services and refining our expertise to cater to the needs and desires of discerning travelers.
+
+
+                                    Started in 2022 after Vialey, our Director of Operations decided to leave his job in Japan to work on a dream that he has long held of being a bridge between Japan and Africa this time from within Africa.<br/>
+
+                                    Our directors also have vast travel experiences with a combined 50+ countries and over 150 cities. They therefore wanted to use some of the experiences gathered from across the world to offer the best experiences for all their clients who choose the Pearl of Africa and the East African Region as a whole as their destination.
                                     <br /><br />
                                     Our Commitment
                                     <br />
                                     At Vialey Kankou Tours, we believe that travel is more than just visiting new places—it's about creating lasting memories, fostering cultural understanding, and leaving a positive impact on the destinations we explore. We are committed to providing ethical and sustainable tourism experiences that not only showcase the beauty of Uganda but also support local communities and conservation efforts.
                                     <br /><br />
-                                  
-                                  
+
+
                                     Join Us on a Journey of Discovery
                                     <br />
                                     Embark on a journey of discovery with Vialey Kankou Tours and uncover the magic of Uganda. Let us guide you through the awe-inspiring landscapes, introduce you to the warm and welcoming Ugandan people, and create cherished memories that will last a lifetime. Contact us today to start planning your unforgettable adventure!
@@ -129,7 +135,7 @@ function AboutUsScreen() {
                                 <div className="px-6 py-12 md:px-12">
                                     <h2 className="text-3xl font-bold mb-4 text-primary display-5">Why people trust us</h2>
                                     <p className="text-gray-500 mb-12">
-                                    At Vialey Kankou Tours, customer satisfaction is at the heart of everything we do. We pride ourselves on delivering exceptional service, ensuring your comfort, safety, and enjoyment throughout your journey. Our team of experienced guides and drivers are passionate about sharing their knowledge and love for Uganda, making your travel experience truly memorable.
+                                        At Vialey Kankou Tours, customer satisfaction is at the heart of everything we do. We pride ourselves on delivering exceptional service, ensuring your comfort, safety, and enjoyment throughout your journey. Our team of experienced guides and drivers are passionate about sharing their knowledge and love for Uganda, making your travel experience truly memorable.
                                     </p>
 
                                     <div className="grid lg:gap-x-12 md:grid-cols-3">
@@ -177,7 +183,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">What destinations in Uganda does Vialey Kankou Tours cover?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                Vialey Kankou Tours covers a wide range of destinations in Uganda, including popular national parks like Bwindi Impenetrable National Park, Queen Elizabeth National Park, Murchison Falls National Park, and more. We also offer city tours in Kampala and cultural experiences in local communities.
+                                    Vialey Kankou Tours covers a wide range of destinations in Uganda, including popular national parks like Bwindi Impenetrable National Park, Queen Elizabeth National Park, Murchison Falls National Park, and more. We also offer city tours in Kampala and cultural experiences in local communities.
                                 </p>
                             </div>
                         </div>
@@ -193,7 +199,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">Are your packages customizable?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                Absolutely! We offer both pre-designed packages and fully customizable itineraries. If our pre-designed packages don't meet your specific requirements, our experienced team can tailor an itinerary to match your interests, preferences, and budget. Just let us know your preferences, and we'll create a unique and memorable journey just for you.
+                                    Absolutely! We offer both pre-designed packages and fully customizable itineraries. If our pre-designed packages don't meet your specific requirements, our experienced team can tailor an itinerary to match your interests, preferences, and budget. Just let us know your preferences, and we'll create a unique and memorable journey just for you.
                                 </p>
                             </div>
                         </div>
@@ -209,7 +215,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">What types of vehicles do you offer for car hire?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                We have a diverse fleet of well-maintained vehicles available for car hire, including sedans, SUVs, minibusses, and 4x4 vehicles suitable for safaris. Our vehicles are equipped with modern amenities and maintained to ensure your comfort and safety during your travels.
+                                    We have a diverse fleet of well-maintained vehicles available for car hire, including sedans, SUVs, minibusses, and 4x4 vehicles suitable for safaris. Our vehicles are equipped with modern amenities and maintained to ensure your comfort and safety during your travels.
                                 </p>
                             </div>
                         </div>
@@ -225,7 +231,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">What is your cancellation policy?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                Our cancellation policy may vary depending on the specific package or service booked. We recommend reviewing our terms and conditions or contacting our team directly for detailed information regarding cancellations, refunds, and any applicable fees.
+                                    Our cancellation policy may vary depending on the specific package or service booked. We recommend reviewing our terms and conditions or contacting our team directly for detailed information regarding cancellations, refunds, and any applicable fees.
                                 </p>
                             </div>
                         </div>
@@ -241,7 +247,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">Is travel insurance included in your packages?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                No, travel insurance is not included in our packages. We highly recommend obtaining comprehensive travel insurance to protect yourself against unexpected events, including trip cancellations, medical emergencies, or lost luggage. Please ensure you have suitable travel insurance coverage before embarking on your journey.
+                                    No, travel insurance is not included in our packages. We highly recommend obtaining comprehensive travel insurance to protect yourself against unexpected events, including trip cancellations, medical emergencies, or lost luggage. Please ensure you have suitable travel insurance coverage before embarking on your journey.
                                 </p>
                             </div>
                         </div>
@@ -257,7 +263,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">How can I contact Vialey Kankou Tours for further assistance or inquiries?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                For further assistance or inquiries, you can reach our friendly team through various channels. You can fill out the contact form on our website, email us at info@vialeykankoutours.com, or call us at +256 789 737973. We'll be more than happy to assist you and provide any additional information you may need.
+                                    For further assistance or inquiries, you can reach our friendly team through various channels. You can fill out the contact form on our website, email us at info@vialeykankoutours.com, or call us at +256 789 737973. We'll be more than happy to assist you and provide any additional information you may need.
                                 </p>
                             </div>
                         </div>
@@ -324,7 +330,7 @@ function AboutUsScreen() {
                                         Phone number
                                     </dt>
                                     <dd className="mt-2 text-base text-gray-500">
-                                    +256 789 737 973
+                                        +256 789 737 973
                                     </dd>
                                 </div>
                             </div>
