@@ -778,7 +778,7 @@ function HomeScreen({ events, packages, testimonials }) {
         gap: '1rem',
         autoplay: true,
         interval: 3000,
-      }} className='mx-12'>
+      }} className='mx-12 hidden md:block'>
         {
           testimonials && testimonials.map((testimonial, index) => (
             <SplideSlide key={index} >
@@ -786,14 +786,27 @@ function HomeScreen({ events, packages, testimonials }) {
             </SplideSlide>
           ))
         }
-
-
       </Splide>
+
+      <Splide options={{
+        type: 'loop',
+        perPage: 1,
+        perMove: 1,
+        gap: '1rem',
+        autoplay: true,
+        interval: 3000,
+        arrows: false,
+      }} className='mx-2 md:hidden'>
+        {
+          testimonials && testimonials.map((testimonial, index) => (
+            <SplideSlide key={index} >
+              <TestimonialCard testimonial={testimonial} />
+            </SplideSlide>
+          ))
+        }
+      </Splide>
+
       {/*End testimonial section*/}
-
-
-
-
 
       <div className="container my-24 px-6 mx-auto">
 
