@@ -67,7 +67,7 @@ function AboutUsScreen() {
 
 
 
-                                    Started in 2022 after Vialey, our Director of Operations decided to leave his job in Japan to work on a dream that he has long held of being a bridge between Japan and Africa this time from within Africa.<br/>
+                                    Started in 2022 after Vialey, our Director of Operations decided to leave his job in Japan to work on a dream that he has long held of being a bridge between Japan and Africa this time from within Africa.<br />
 
                                     Our directors also have vast travel experiences with a combined 50+ countries and over 150 cities. They therefore wanted to use some of the experiences gathered from across the world to offer the best experiences for all their clients who choose the Pearl of Africa and the East African Region as a whole as their destination.
                                     <br /><br />
@@ -140,7 +140,7 @@ function AboutUsScreen() {
 
                                     <div className="grid lg:gap-x-12 md:grid-cols-3">
                                         <div className="mb-12 md:mb-0">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">0</h2>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">43</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Happy tourists</h5>
                                         </div>
 
@@ -282,10 +282,10 @@ function AboutUsScreen() {
                         <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                             Our Offices
                         </p>
-                        <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                        {/* <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam voluptatum cupiditate veritatis
                             in, accusamus quisquam.
-                        </p>
+                        </p> */}
                     </div>
 
                     <div className="mt-10">
@@ -330,7 +330,7 @@ function AboutUsScreen() {
                                         Phone number
                                     </dt>
                                     <dd className="mt-2 text-base text-gray-500">
-                                        +256 789 737 973
+                                        +256-393-246-536
                                     </dd>
                                 </div>
                             </div>

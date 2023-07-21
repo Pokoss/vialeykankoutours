@@ -895,7 +895,7 @@ function HomeScreen({ events, packages, testimonials }) {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1 text-gray-600 text-sm md:text-base leading-relaxed">Call Us</p>
-                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">+256 789 737 973</p>
+                          <p className="font-light text-gray-600 text-sm md:text-base leading-relaxed">+256-393-246-536</p>
                         </div>
                       </div>
                     </a>
