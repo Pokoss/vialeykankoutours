@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         $events = Event::latest()->limit(3)->get();
         $packages = Package::get();
-        $testimonials = Testimonial::latest()->limit(5)->get();
+        $testimonials = Testimonial::latest()->get();
         
         return Inertia::render('HomeScreen', [
             'events' => $events, 
