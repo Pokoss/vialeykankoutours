@@ -140,17 +140,17 @@ function AboutUsScreen() {
 
                                     <div className="grid lg:gap-x-12 md:grid-cols-3">
                                         <div className="mb-12 md:mb-0">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">43</h2>
-                                            <h5 className="text-lg font-medium text-gray-500 mb-0">Happy tourists</h5>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">74</h2>
+                                            <h5 className="text-lg font-medium text-gray-500 mb-0">Visitors</h5>
                                         </div>
 
-                                        <div className="mb-12 md:mb-0">
+                                        {/* <div className="mb-12 md:mb-0">
                                             <h2 className="text-3xl font-bold text-primary mb-4">0%</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Growth</h5>
-                                        </div>
+                                        </div> */}
 
                                         <div className="">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">0</h2>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">28</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Tours</h5>
                                         </div>
                                     </div>
@@ -263,7 +263,7 @@ function AboutUsScreen() {
                                 <h1 className="text-xl font-semibold text-gray-700">How can I contact Vialey Kankou Tours for further assistance or inquiries?</h1>
 
                                 <p className="mt-2 text-sm text-gray-500">
-                                    For further assistance or inquiries, you can reach our friendly team through various channels. You can fill out the contact form on our website, email us at info@vialeykankoutours.com, or call us at +256 789 737973. We'll be more than happy to assist you and provide any additional information you may need.
+                                    For further assistance or inquiries, you can reach our friendly team through various channels. You can fill out the contact form on our website, email us at info@vialeykankoutours.com, or call us at +256-393-246-536. We'll be more than happy to assist you and provide any additional information you may need.
                                 </p>
                             </div>
                         </div>
