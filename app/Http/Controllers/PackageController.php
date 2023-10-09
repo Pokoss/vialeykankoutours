@@ -82,7 +82,27 @@ class PackageController extends Controller
      */
     public function update(Request $request, Package $package)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'addons' => 'string',
+            'activities' => 'string',
+            'duration' => 'required|integer',
+            'price' => 'required|integer',
+        ]);
+
+        $value = $request->input('name') . ' ' . Str::random();
+        $slug = Str::slug($value . '-');
+
+        $package->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'addons' => $request->input('addons'),
+            'activities' => $request->input('activities'),
+            'duration' => $request->input('duration'),
+            'price' => $request->input('price'),
+            'slug' => $slug,
+        ]);
     }
 
     /**

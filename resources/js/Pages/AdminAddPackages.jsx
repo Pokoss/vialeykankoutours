@@ -14,23 +14,40 @@ import {
   CardBody,
   CardHeader,
   IconButton,
+  Spinner,
 } from "@material-tailwind/react";
 import { router, useForm } from '@inertiajs/react';
 
 function AdminAddPackages({ packages }) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(!open);
+  const { data, setData, processing, post, put, reset, errors, transform } = useForm();
 
-  const { data, setData, processing, post, reset, errors, transform } = useForm();
+  const handleOpen = (pack) => {
+    setData(pack ?? {});
+    setOpen(!open);
+  }
 
   transform((data) => ({
     ...data,
-    'activities': JSON.stringify((data.activities ?? '').split(',')),
-    'addons': JSON.stringify((data.addons ?? '').split(',')),
+    'activities': JSON.stringify((data.activities ?? '')),
+    'addons': JSON.stringify((data.addons ?? '')),
   }));
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (data.id) {
+      put(`/packages/${data.slug}`, {
+        preserveScroll: true, preserveState: true,
+        onSuccess: () => {
+          // toast.success('We have received you request, we shall contact you shortly')
+          reset();
+          setData({});
+          handleOpen();
+        }
+      });
+      return;
+    }
+
     post('/packages', {
       preserveScroll: true, preserveState: true,
       onSuccess: () => {
@@ -94,17 +111,18 @@ function AdminAddPackages({ packages }) {
                           <Textarea color='green' size="lg" label="Description"
                             value={data.description ?? ''} onChange={e => setData('description', e.target.value)} error={errors.description} />
                           <Input color='green' size="lg" label="Activities"
-                            value={data.activities ?? ''} onChange={e => setData('activities', e.target.value)} error={errors.activities} />
+                            value={data.activities ?? ''} onChange={e => setData('activities', e.target.value.split(','))} error={errors.activities} />
                           <Input color='green' size="lg" label="Add Ons"
-                            value={data.addons ?? ''} onChange={e => setData('addons', e.target.value)} error={errors.addons} />
+                            value={data.addons ?? ''} onChange={e => setData('addons', e.target.value.split(','))} error={errors.addons} />
                         </div>
                       </DialogBody>
                       <DialogFooter className="space-x-2">
-                        <Button variant="text" color="blue-gray" onClick={handleOpen}>
+                        <Button variant="text" color="blue-gray" onClick={handleOpen} disabled={processing}>
                           close
                         </Button>
-                        <Button type='submit' color='green' variant="gradient">
-                          Add
+                        <Button type='submit' color='green' variant="gradient" disabled={processing}>
+                          {processing ? <Spinner /> :
+                            data.id ? 'Update' : 'Add'}
                         </Button>
                       </DialogFooter>
                     </form>
@@ -114,61 +132,66 @@ function AdminAddPackages({ packages }) {
             </div>
           </CardHeader>
           <CardBody className="overflow-scroll px-0">
-          <table className="w-full min-w-max table-auto text-left">
-            <thead>
-              <tr>
-                {['Title', 'Activities', 'Addons', 'Description', ''].map((head) => (
-                  <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal leading-none opacity-70"
-                    >
-                      {head}
-                    </Typography>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {packages && packages.map(({ id, name, description, addons, activities, slug }, index) => {
-                const isLast = index === packages.length - 1;
-                const classes = isLast ? "p-4 max-w-xs" : "p-4 max-w-xs border-b border-blue-gray-50";
+            <table className="w-full min-w-max table-auto text-left">
+              <thead>
+                <tr>
+                  {['Title', 'Activities', 'Addons', 'Description', ''].map((head) => (
+                    <th key={head} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal leading-none opacity-70"
+                      >
+                        {head}
+                      </Typography>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {packages && packages.map((pack, index) => {
+                  const isLast = index === packages.length - 1;
+                  const classes = isLast ? "p-4 max-w-xs" : "p-4 max-w-xs border-b border-blue-gray-50";
 
-                return (
-                  <tr key={index}>
-                    <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal">
-                        {name}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal">
-                        {activities ? activities.join(', ') : ''}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal">
-                        {addons ? addons.join(', ') : ''}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography variant="small" color="blue-gray" className="font-normal line-clamp-3">
-                        {description}
-                      </Typography>
-                    </td>
-                    <td className={" p-0"}>
-                      <IconButton variant='text' onClick={() => handleDelete(slug)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-6 h-6">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                        </svg>
-                      </IconButton>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                  return (
+                    <tr key={index}>
+                      <td className={classes}>
+                        <Typography variant="small" color="blue-gray" className="font-normal">
+                          {pack.name}
+                        </Typography>
+                      </td>
+                      <td className={classes}>
+                        <Typography variant="small" color="blue-gray" className="font-normal">
+                          {pack.activities ? pack.activities.join(', ') : ''}
+                        </Typography>
+                      </td>
+                      <td className={classes}>
+                        <Typography variant="small" color="blue-gray" className="font-normal">
+                          {pack.addons ? pack.addons.join(', ') : ''}
+                        </Typography>
+                      </td>
+                      <td className={classes}>
+                        <Typography variant="small" color="blue-gray" className="font-normal line-clamp-3">
+                          {pack.description}
+                        </Typography>
+                      </td>
+                      <td className={" p-0"}>
+                        <IconButton variant='text' onClick={() => handleOpen(pack)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                          </svg>
+                        </IconButton>
+                        <IconButton variant='text' onClick={() => handleDelete(slug)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                          </svg>
+                        </IconButton>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </CardBody>
         </Card>
       </Layout>

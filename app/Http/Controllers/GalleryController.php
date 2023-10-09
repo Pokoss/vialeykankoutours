@@ -13,8 +13,27 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $gallery = Gallery::latest()->limit(20)->get();
-        return Inertia::render('GalleryScreen', ['gallery' => $gallery]);
+        $images = Gallery::where('image', 'like', '%.jpg')
+                  ->orWhere('image', 'like', '%.jpeg')
+                  ->orWhere('image', 'like', '%.png')
+                  ->orWhere('image', 'like', '%.bmp')
+                  ->orWhere('image', 'like', '%.gif')
+                  ->orWhere('image', 'like', '%.svg')
+                  ->orWhere('image', 'like', '%.webp')
+                  ->latest()
+                  ->limit(50)
+                  ->get();
+
+        $videos = Gallery::where('image', 'like', '%.mp4')
+                        ->orWhere('image', 'like', '%.webm')
+                        ->orWhere('image', 'like', '%.mov')
+                        ->orWhere('image', 'like', '%.avi')
+                        ->orWhere('image', 'like', '%.mpeg')
+                        ->latest()
+                        ->limit(50)
+                        ->get();
+
+        return Inertia::render('GalleryScreen', ['gallery' => $images, 'videos' => $videos]);
     }
 
     /**
@@ -33,7 +52,7 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'string',
-            'image' => 'required|image',
+            'image' => 'required|mimes:jpeg,png,bmp,gif,svg,mp4,webm,mov,avi,mpeg',
         ]);
 
         $file = $request->file('image');

@@ -31,6 +31,7 @@ function AdminAddGallery({ gallery }) {
         // toast.success('We have received you request, we shall contact you shortly')
         reset();
         setData({})
+        setOpen(false)
       }
     });
   }
@@ -73,7 +74,7 @@ function AdminAddGallery({ gallery }) {
                         <div className="mb-2 flex flex-col gap-3">
                           <Input color='green' size="lg" label="Title"
                             value={data.title ?? ''} onChange={e => setData('title', e.target.value)} error={errors.title} />
-                          <Input color='green' type='file' size="lg" label="Image" accept="image/*"
+                          <Input color='green' type='file' size="lg" label="Image" accept="image/*,video/*"
                             onChange={e => setData('image', e.target.files[0])} error={errors.image} />
                         </div>
                       </DialogBody>
@@ -81,7 +82,7 @@ function AdminAddGallery({ gallery }) {
                         <Button variant="text" color="blue-gray" onClick={handleOpen}>
                           close
                         </Button>
-                        <Button type='submit' color='green' variant="gradient" onClick={handleOpen}>
+                        <Button type='submit' color='green' variant="gradient" onClick={handleSubmit}>
                           Add
                         </Button>
                       </DialogFooter>
