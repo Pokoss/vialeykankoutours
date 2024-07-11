@@ -154,7 +154,7 @@ function AboutUsScreen() {
 
                                     <div className="grid lg:gap-x-12 md:grid-cols-3">
                                         <div className="mb-12 md:mb-0">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">74</h2>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">116</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Visitors</h5>
                                         </div>
 
@@ -164,7 +164,7 @@ function AboutUsScreen() {
                                         </div> */}
 
                                         <div className="">
-                                            <h2 className="text-3xl font-bold text-primary mb-4">28</h2>
+                                            <h2 className="text-3xl font-bold text-primary mb-4">38</h2>
                                             <h5 className="text-lg font-medium text-gray-500 mb-0">Tours</h5>
                                         </div>
                                     </div>
