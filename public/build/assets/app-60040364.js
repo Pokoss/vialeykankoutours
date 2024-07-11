@@ -147,7 +147,7 @@ More details: https://www.material-tailwind.com/docs/react/collapse
             
             That saw the birth of Vialey Kankou Tours which he hopes will grow to become one of the most reputable tour companies not only in Uganda but in East Africa as a region.`,facebook:"",twitter:"",linkedIn:""},{id:"2",name:"Nakaswa John",title:"Director",image:"/Images/web/Nakaswa.jpeg",description:`Nakaswa John is a Business Development Consultant linking Japan & Africa. He holds a bachelor’s degree in International Relations with a minor in Japanese Language from Kwansei Gakuin University in Japan. He love traveling and have visited over 15 countries.
 <br/></br>
-            After spending over 10 years in Japan where he still resides, he is eager to share his expertise in order to give the most memorable trips to all our guests.`,facebook:"",twitter:"",linkedIn:""},{id:"2",name:"Matsumoto Shinya",title:"",image:"/Images/web/matsumoto-shinya.jpg",description:`まつもと　しんや
+            After spending over 10 years in Japan where he still resides, he is eager to share his expertise in order to give the most memorable trips to all our guests.`,facebook:"",twitter:"",linkedIn:""},{id:"2",name:"Matsumoto Shinya",title:"",image:"/Images/web/matsumoto-shinya.jpg",description:`
 日本で生まれ、日本育ち。
 海外を旅していく中で、アフリカのウガンダ、ケニアに魅力を感じました。
 日本人はもちろん、アジア人の方でも安心してツアー観光できるように、全力でサポートさせていただきます。

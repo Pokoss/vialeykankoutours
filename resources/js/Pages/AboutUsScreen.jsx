@@ -44,7 +44,7 @@ function AboutUsScreen() {
             'name': 'Matsumoto Shinya',
             'title': '',
             'image': '/Images/web/matsumoto-shinya.jpg',
-            'description': `まつもと　しんや
+            'description': `
 日本で生まれ、日本育ち。
 海外を旅していく中で、アフリカのウガンダ、ケニアに魅力を感じました。
 日本人はもちろん、アジア人の方でも安心してツアー観光できるように、全力でサポートさせていただきます。
