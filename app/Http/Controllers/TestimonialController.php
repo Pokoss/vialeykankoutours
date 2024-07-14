@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
+use App\Models\TestimonialImage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Carbon\Carbon;
+use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Str;
 
 class TestimonialController extends Controller
 {
@@ -41,6 +45,29 @@ class TestimonialController extends Controller
             'title' => $request->input('title'),
             'name' => $request->input('name'),
             'content' => $request->input('content'),
+        ]);
+    }
+
+    public function addImage(Request $request){
+        $request->validate([
+            'editName' => 'required',
+            'image' => 'required',
+            'editId' => 'required',
+            'editTitle' => 'required',          
+        ]);
+
+        $date = Carbon::now()->format('YmdHisv');
+        $value = $request->editTitle . ' ' . $date . ' ' . Str::random();
+
+        $image_slug = Str::slug($value, '-');
+
+        $file = $request->file('image');
+        $filename = $image_slug . '.' . $file->extension();
+        $path = $file->storeAs('/Images/testimonial', $filename, ['disk' => 'public_uploads']);
+
+        $testimonial_image = TestimonialImage::create([
+            'testimonial_id' => $request->editId,
+            'image'=>$path
         ]);
     }
 

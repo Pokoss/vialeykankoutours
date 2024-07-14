@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Testimonial extends Model
+class TestimonialImage extends Model
 {
     use HasFactory;
 
+    protected $table = 'testimonial_images';
+
     protected $fillable = [
-        'name',
-        'title',
-        'content',
+        'testimonial_id',
         'image'
     ];
 
-    public function image(){
-        return $this->hasMany(TestimonialImage::class,'testimonial_id','id');
-    }
+    
 }

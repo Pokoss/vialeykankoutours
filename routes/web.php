@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/gallery', [GalleryController::class, 'create']);
     Route::get('/admin/blog', [PostController::class, 'create']);
     Route::get('/admin/testimonials', [TestimonialController::class, 'create']);
+    Route::post('/add-testimonial-image', [TestimonialController::class, 'addImage']);
 });
 
 Auth::routes();

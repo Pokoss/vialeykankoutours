@@ -15,11 +15,20 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { router, useForm } from '@inertiajs/react';
+import Compressor from 'compressorjs';
+
 
 
 function AdminAddTestimonials({ testimonials }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
+
+  const [open1, setOpen1] = useState(false);
+  const handleOpen1 = () => setOpen1(!open1);
+
+  const [editTitle, setEditTitle] = useState('')
+  const [editId, setEditId] = useState('')
+  const [editName, setEditName] = useState('')
 
   const { data, setData, processing, post, reset, errors } = useForm();
 
@@ -43,6 +52,50 @@ function AdminAddTestimonials({ testimonials }) {
           // toast.success('We have received you request, we shall contact you shortly')
         }
       })
+    }
+  }
+
+  function openEdit(id, title, name) {
+    setEditId(id),
+      setEditName(name),
+      setEditTitle(title),
+      handleOpen1()
+  }
+
+  const [image, setImage] = useState(null);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+
+    new Compressor(file, {
+      quality: 0.6,
+      success(result) {
+        setImage(result);
+      },
+      error(err) {
+        console.log(err.message);
+      },
+    });
+  };
+
+  const postImage = async (event) => {
+    event.preventDefault();
+    if (image == null) {
+      console.log('failed')
+      handleOpen1()
+    }
+    else{
+      try {
+      router.post('/add-testimonial-image', {editId,editTitle,editName,image},
+        {
+          onSuccess:()=>{
+            console.log('upload successful')
+          }
+        }
+      )
+    } catch (error) {
+      console.log('failed2')
+  }
     }
   }
 
@@ -133,7 +186,13 @@ function AdminAddTestimonials({ testimonials }) {
                         </Typography>
                       </td>
                       <td className={" p-0"}>
-                        <IconButton variant='text' onClick={() => handleDelete(id)}>
+                        <button onClick={() => openEdit(id, title, name)} className='bg-green-600 rounded-md p-1'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-5 h-5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        </svg>
+                        </button>
+                      </td>
+                      <td className={" p-0"}>
+                        <IconButton variant='text' onClick={() => handleDelete(id, title, name)}>
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                           </svg>
@@ -147,6 +206,28 @@ function AdminAddTestimonials({ testimonials }) {
           </CardBody>
         </Card>
       </Layout>
+
+      <Fragment>
+        <Dialog open={open1} handler={handleOpen1} size='xl'>
+          <form onSubmit={postImage}>
+            <DialogHeader>Add images for {editName}'s review </DialogHeader>
+            <DialogBody divider className="h-[29rem] overflow-scroll">
+              <p className='text-lg font-semibold mb-5'>{editTitle}</p>
+
+              <Input color='green' label='Add an Image' accept=".jpg,.jpeg,.png" size='md' type='file' onChange={handleImageChange} />
+            </DialogBody>
+            <DialogFooter className="space-x-2">
+              <Button variant="outlined" color="red" onClick={handleOpen1}>
+                close
+              </Button>
+              <Button type='submit' variant="outlined" color="green">
+                Add
+              </Button>
+            </DialogFooter>
+          </form>
+        </Dialog>
+
+      </Fragment>
 
     </div>
   )
