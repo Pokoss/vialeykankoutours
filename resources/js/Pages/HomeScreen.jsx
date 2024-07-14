@@ -19,7 +19,6 @@ import {
 } from "@material-tailwind/react";
 
 function HomeScreen({ events, packages, testimonials }) {
-  console.log(testimonials)
   const contactForm = useForm({
     'name': null,
     'email': null,
