@@ -42,7 +42,7 @@ function TestimonialCard({ testimonial }) {
             <Typography className="font-normal">
 
               <div className='text-lg font-semibold'>{testimonial.title}</div>
-              <div className='text-base'>{testimonial.content} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias perspiciatis aliquid deserunt expedita. Ab ducimus, cupiditate vitae mollitia, eius aut amet ut illo quasi sint ipsam accusamus ad dolorum assumenda. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nemo illum soluta sequi quod quisquam atque dolore accusamus aspernatur consequuntur debitis ipsam quo, non, est ut aliquid vero eaque cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolorem neque expedita labore veniam laborum autem minima vel quas quod, sit culpa ipsa impedit! Hic explicabo non eos saepe eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil cupiditate placeat omnis repellendus, eos doloribus magni eligendi, corrupti facilis ducimus harum adipisci eveniet quo incidunt amet tenetur laborum officiis necessitatibus!</div>
+              <div className='text-base'>{testimonial.content}</div>
             </Typography>
 
             <div className="w-full mt-3 grid grid-cols-1 gap-y-3 gap-x-1 sm:grid-cols-1 lg:grid-cols-2 xl:gap-x-2">
