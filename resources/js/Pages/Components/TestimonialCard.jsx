@@ -14,7 +14,7 @@ function TestimonialCard({ testimonial }) {
   const handleOpen = () => setOpen(!open);
   return (
 
-    <div>
+    <div className='cursor-pointer'>
       <div className="shadow-sm rounded-xl" onClick={handleOpen}>
         <blockquote className="overflow-hidden h-full  flex flex-col bg-white shadow rounded-xl">
           <header className="p-6 space-y-4 flex flex-col flex-1">
