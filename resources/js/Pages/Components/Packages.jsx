@@ -10,9 +10,12 @@ function Packages({ pack }) {
             <p className="mb-4 text-sm text-gray-500">
                 {pack.duration}+ days
             </p>
+                {
+                    pack.price ==0?<></>:
             <p className="text-2xl font-bold text-black mb-4">
             $ {pack.price}
     </p>
+                }
 
             <button type="button" className="w-full px-3 py-3 m-auto text-sm text-white bg-primary border rounded-lg shadow hover:bg-green-600 hover:text-white">
                 Book now
