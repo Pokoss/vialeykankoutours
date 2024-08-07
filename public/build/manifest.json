@@ -5,22 +5,22 @@
     "src": "node_modules/web-vitals/dist/web-vitals.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-53579140.css",
+    "file": "assets/app-2b82d527.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-f5d60f49.css",
+    "file": "assets/app-3de8388c.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-f5d60f49.css"
+      "assets/app-3de8388c.css"
     ],
     "dynamicImports": [
       "node_modules/web-vitals/dist/web-vitals.js"
     ],
-    "file": "assets/app-f596429d.js",
+    "file": "assets/app-34be1b5e.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
