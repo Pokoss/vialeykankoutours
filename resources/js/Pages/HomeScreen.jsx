@@ -965,6 +965,8 @@ function HomeScreen({ events, packages, testimonials }) {
                     <button onClick={openInstagram} className="grow-0 mb-12 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <img className='object-fill' src='/Images/web/instagram.jpeg' />
                     </button>
+
+                    <a href="https://store.pesapal.com/vialeykankoutourslimited" target='blank' className="text-white align-middle pt-3 text-sm font-bold uppercase pl-2 m-2 bg-green-700 p-2 rounded justify-center h-12 text-center hover:gb-green-700">Click to make payment</a>
                   </div>
 
 

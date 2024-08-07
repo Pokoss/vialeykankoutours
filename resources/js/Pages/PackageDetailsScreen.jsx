@@ -35,11 +35,11 @@ function PackageDetailsScreen({ tour_package }) {
                         </p>
                         <div className='flex items-center'>
 
-                            <a href="https://store.pesapal.com/vialeykankoutourslimited" target='blank' className="text-white text-sm font-bold uppercase pl-2 m-2 bg-green-400 p-1 rounded w-40 text-center hover:gb-green-700">Pay here</a>
                             {
                                 tour_package.price == 0 ? <></>:
-                            <div href="#" className="text-green-600 text-sm font-bold uppercase pl-2">$ {tour_package.price}</div>
+                                <div href="#" className="text-green-600 text-sm font-bold uppercase pl-2">$ {tour_package.price}</div>
                             }
+                            <a href="https://store.pesapal.com/vialeykankoutourslimited" target='blank' className="text-white text-sm font-bold uppercase pl-2 m-2 bg-green-400 p-1 rounded w-40 text-center hover:gb-green-700">Pay here</a>
                         </div>
 
                         <div>
