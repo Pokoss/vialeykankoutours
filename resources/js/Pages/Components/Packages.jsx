@@ -13,7 +13,7 @@ function Packages({ pack }) {
                 {
                     pack.price ==0?<></>:
             <p className="text-2xl font-bold text-black mb-4">
-            $ {pack.price}
+            $ {pack.price} ~
     </p>
                 }
 
