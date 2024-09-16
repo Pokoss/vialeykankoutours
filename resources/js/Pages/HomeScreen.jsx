@@ -808,6 +808,17 @@ function HomeScreen({ events, packages, testimonials }) {
 
       {/*End testimonial section*/}
 
+      <div className="max-w-xl mx-auto text-center pt-10 md:py-10" data-aos='fade-down'>
+        <div className="w-24 h-2 bg-primary mb-4 mx-auto"></div>
+        <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Our Partners</h2>
+      </div>
+
+      <div className='flex h-28 justify-center gap-7'>
+        <img className='h-full w-32' src='/Images/utb_logo.jpg'/>
+        <img ckassName='h-full ' src='/Images/uwa.jpg'/>
+
+      </div>
+
       <div className="container my-24 px-6 mx-auto">
 
 
