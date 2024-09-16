@@ -813,8 +813,8 @@ function HomeScreen({ events, packages, testimonials }) {
         <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Our Partners</h2>
       </div>
 
-      <div className='flex h-28 justify-center gap-7'>
-        <img className='h-full w-32' src='/Images/utb_logo.jpg'/>
+      <div className='flex h-28 justify-center gap-7 grayscale'>
+        <img className='h-full w-32 ' src='/Images/utb_logo.jpg'/>
         <img ckassName='h-full ' src='/Images/uwa.jpg'/>
 
       </div>
