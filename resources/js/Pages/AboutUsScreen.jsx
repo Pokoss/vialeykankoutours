@@ -182,108 +182,107 @@ function AboutUsScreen() {
                 Frequent<span className="text-primary"> Questions</span>
             </h3>
             <section className="bg-white">
-                <div className="container px-6 py-12 mx-auto">
+    <div className="container px-6 py-12 mx-auto">
 
-
-                    <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-8 md:grid-cols-2 xl:grid-cols-3">
-                        <div>
-                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700">What destinations in Uganda does Vialey Kankou Tours cover?</h1>
-
-                                <p className="mt-2 text-sm text-gray-500">
-                                    Vialey Kankou Tours covers a wide range of destinations in Uganda, including popular national parks like Bwindi Impenetrable National Park, Queen Elizabeth National Park, Murchison Falls National Park, and more. We also offer city tours in Kampala and cultural experiences in local communities.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700">Are your packages customizable?</h1>
-
-                                <p className="mt-2 text-sm text-gray-500">
-                                    Absolutely! We offer both pre-designed packages and fully customizable itineraries. If our pre-designed packages don't meet your specific requirements, our experienced team can tailor an itinerary to match your interests, preferences, and budget. Just let us know your preferences, and we'll create a unique and memorable journey just for you.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700">What types of vehicles do you offer for car hire?</h1>
-
-                                <p className="mt-2 text-sm text-gray-500">
-                                    We have a diverse fleet of well-maintained vehicles available for car hire, including sedans, SUVs, minibusses, and 4x4 vehicles suitable for safaris. Our vehicles are equipped with modern amenities and maintained to ensure your comfort and safety during your travels.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700">What is your cancellation policy?</h1>
-
-                                <p className="mt-2 text-sm text-gray-500">
-                                    Our cancellation policy may vary depending on the specific package or service booked. We recommend reviewing our terms and conditions or contacting our team directly for detailed information regarding cancellations, refunds, and any applicable fees.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700">Is travel insurance included in your packages?</h1>
-
-                                <p className="mt-2 text-sm text-gray-500">
-                                    No, travel insurance is not included in our packages. We highly recommend obtaining comprehensive travel insurance to protect yourself against unexpected events, including trip cancellations, medical emergencies, or lost luggage. Please ensure you have suitable travel insurance coverage before embarking on your journey.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className="inline-block p-3 text-white bg-primary rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-
-                            <div>
-                                <h1 className="text-xl font-semibold text-gray-700">How can I contact Vialey Kankou Tours for further assistance or inquiries?</h1>
-
-                                <p className="mt-2 text-sm text-gray-500">
-                                    For further assistance or inquiries, you can reach our friendly team through various channels. You can fill out the contact form on our website, email us at info@vialeykankoutours.com, or call us at +256-393-246-536. We'll be more than happy to assist you and provide any additional information you may need.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-8 md:grid-cols-2 xl:grid-cols-3">
+            <div>
+                <div className="inline-block p-3 text-white bg-primary rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                 </div>
-            </section>
+
+                <div>
+                    <h1 className="text-xl font-semibold text-gray-700">What services does Kiru General Services Ltd offer?</h1>
+
+                    <p className="mt-2 text-sm text-gray-500">
+                        Kiru General Services Ltd specializes in road construction, building projects, and waterworks, delivering reliable and high-quality engineering solutions across Uganda.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div className="inline-block p-3 text-white bg-primary rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 className="text-xl font-semibold text-gray-700">Does Kiru General Services Ltd handle large-scale projects?</h1>
+
+                    <p className="mt-2 text-sm text-gray-500">
+                        Yes, we have extensive experience managing both large-scale and community-level infrastructure projects, ensuring quality and timely delivery.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div className="inline-block p-3 text-white bg-primary rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 className="text-xl font-semibold text-gray-700">Can Kiru General Services Ltd assist with project design?</h1>
+
+                    <p className="mt-2 text-sm text-gray-500">
+                        Absolutely! We provide design and build services, including tailored project designs to meet your specific needs and requirements.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div className="inline-block p-3 text-white bg-primary rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 className="text-xl font-semibold text-gray-700">What regions in Uganda do you operate in?</h1>
+
+                    <p className="mt-2 text-sm text-gray-500">
+                        Kiru General Services Ltd operates nationwide, serving urban and rural areas with comprehensive construction solutions.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div className="inline-block p-3 text-white bg-primary rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 className="text-xl font-semibold text-gray-700">How do I request a quote for a project?</h1>
+
+                    <p className="mt-2 text-sm text-gray-500">
+                        You can request a quote by contacting us through our website, email, or phone. Provide your project details, and our team will get back to you promptly.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div className="inline-block p-3 text-white bg-primary rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <div>
+                    <h1 className="text-xl font-semibold text-gray-700">What sets Kiru General Services apart from other companies?</h1>
+
+                    <p className="mt-2 text-sm text-gray-500">
+                        Our commitment to quality, reliability, and client satisfaction, combined with our skilled team and state-of-the-art technology, sets us apart in the construction industry.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 

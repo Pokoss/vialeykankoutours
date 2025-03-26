@@ -813,9 +813,15 @@ function HomeScreen({ events, packages, testimonials }) {
         <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl">Partnerships & Memberships</h2>
       </div>
 
-      <div className='flex h-28 justify-center gap-7'>
-        <img className='h-full w-32 ' src='/Images/utb_logo.jpg'/>
-        <img ckassName='h-full ' src='/Images/uwa.jpg'/>
+      <div className='sm:flex align-middle items-center w-full grid place-items-center justify-center gap-7'>
+        <a href='https://www.tripadvisor.com/Attraction_Review-g293841-d26312163-Reviews-Vialey_Kankou_Tours-Kampala_Central_Region.html' target='blank'>
+        <img className='h-28 ' src='/Images/tripadvisor-icon.png'/>
+        </a>
+        <a href='https://safaribookings.com' target='blank'>
+        <img className='h-28 ' src='/Images/safari-bookings.jpeg'/>
+        </a>
+        <img className='h-28 w-32 ' src='/Images/utb_logo.jpg'/>
+        <img className='h-28 ' src='/Images/uwa.jpg'/>
 
       </div>
 
